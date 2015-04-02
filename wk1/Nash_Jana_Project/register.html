@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Register</title>
+
+
+</head>
+<body>
+<form id = "register" method = "post">
+    <fieldset>
+        <div class = "required">
+            <label for = "fname">What is your first name?</label>
+            <input id = "fname" type = "text" placeholder = "first name" required aria-required = "true">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class = "required">
+            <label for = "lname">What is your last name?</label>
+            <input id = "lname" type = "text" placeholder = "last name" required aria-required = "true">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class = "required">
+            <label for = "userName">What will your username be?</label>
+            <input id = "userName" type = "text" placeholder = "Username" required aria-required = "true">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class = "required">
+            <label for = "email">Your email address</label>
+            <input id = "email" name = "email" type = "email" placeholder = "user@mydomain.com" required aria-required = "true">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <div class = "required">
+            <label for="passwordInput">Password: <input type="password" id="passwordInput" name="passwordInput" placeholder = "password" required aria-required = "true"></label>
+            <label for="confirmPasswordInput">Confirm Password: <input type="password" id="confirmPasswordInput" name="confirmPasswordInput" placeholder = "confirm password" required aria-required = "true"></label></div>
+        <div class="" id="passwordStrength"></div>
+        <input type="submit" value="Save Password" class="btn">
+
+    </fieldset>
+
+
+    <fieldset>
+        <div class = "submit">
+            <p><a class = "btn" href = "">Reset</a>
+                <input class="submit_btn" name="submit" type="submit" value="Save" onclick="submit();" />
+                <input class="submit_btn" name="submit" type="submit" value="Save and Quit" onclick="submit();"  />
+            </p>
+        </div>
+    </fieldset>
+
+
+</form>
+
+
+<!-- jquery -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- plugins -->
+
+
+<!-- main -->
+<script type="text/javascript" src="js/main.js"></script>
+<script type = "text/javascript" src = "js/respond.min.js"></script>
+<script src = "js/password.js"></script>
+</body>
+</html>
