@@ -1,4 +1,7 @@
-/*Jana Nash-Siegle*/
+/*Jana Nash-Siegle
+StyleSheet for Registration Page.
+Unsure of our flexibility with style sheets,
+but with time constraints, I chose a separate one so form elements did not conflict with welcome page.*/
 html {
     box-sizing: border-box;
 }
