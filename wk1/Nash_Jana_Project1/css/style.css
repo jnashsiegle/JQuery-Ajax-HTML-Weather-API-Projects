@@ -13,14 +13,15 @@ html {
 }
 /*Admin Page - Some button styling below #login input.btn */
 header {
+    display: inline-block;
+    width: 100%;
     text-align:left;
-    /*margin-left: 20px;*/
-    display: flex;
     background-color: #7E6C54;
     color: #f3f4f5;;
 }
 header p {
     margin-left:20px;
+    display: inline-block;
 }
 
 /*top log in bar / nav bar styling*/
@@ -68,13 +69,16 @@ img#nav{
     width: 200%;
     height: 30px;
     display: inline-block;
+    color: #000;
+    font-weight: bold;
 }
 
 header button{     /*Dashboard Page*/
-    width: 5%;
+    display: inline-block;
+    width: 10%;
     height: 2em;
-    margin-left:85%;
-    margin-top: 15px;
+    float: right;
+    margin: 10px 20px auto auto;
 }
 /*begin body styling*/
 body {
@@ -169,6 +173,7 @@ p {
     width:55%;
     height: 3.125em;
     font-size:1.5em;
+    font-weight: bold;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
@@ -257,8 +262,9 @@ blockquote p {
     display: inline-block;
     color: #000;
     width:43%;
-    height: 1.563em;
+    height: 2.5em;
     font-size:1em;
+    font-weight: bold;
     margin-left: 1.250em;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
