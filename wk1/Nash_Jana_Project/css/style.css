@@ -69,6 +69,7 @@ img#nav{
     height: 30px;
     display: inline-block;
 }
+
 header button{     /*Dashboard Page*/
     width: 5%;
     height: 2em;
@@ -110,6 +111,9 @@ p {
     font-weight: 400;
     line-height: 1.250em;
 }
+
+
+
 /*begin upper half of content styling*/
 .COA {
     margin: 2.25em  auto .75em auto;
@@ -157,7 +161,7 @@ p {
     margin: 0 auto;
 }
 #features h2 {
-    margin: 2.5em auto 1.875em;
+    margin: 1.255em auto 1.875em;
 }
 #features button {
     display: inline-block;
@@ -177,6 +181,7 @@ p {
     background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
+    margin-bottom: 1.250em;
 }
 /*End of Intro*/
 /*mid-section styling*/
