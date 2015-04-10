@@ -1,0 +1,85 @@
+<!--Jana Nash-Siegle-->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css?v=1">
+
+</head>
+
+<body>
+
+
+
+        <form id = "rRegister" method = "post">
+            <img src = "images/House_Logo.png" alt = "HomeSmart.com">
+            <h1>Registration</h1>
+            <fieldset>
+                <div class = "">
+                    <label for = "fname">What is your first name?</label>
+                    <input id = "fname" type = "text" placeholder = "first name">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class = "">
+                    <label for = "lname">What is your last name?</label>
+                    <input id = "lname" type = "text" placeholder = "last name">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class = "required">
+                    <label for = "userName">What will your username be?</label>
+                    <input id = "userName" type = "text" placeholder = "Username" required aria-required = "true">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class = "required">
+                    <label for = "email">Your email address</label>
+                    <input id = "email" name = "email" type = "email" placeholder = "user@mydomain.com" required aria-required = "true">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class = "required">
+                    <label for="passwordInput">Password: <input type="password" id="passwordInput" name="passwordInput" placeholder = "password" required aria-required = "true">
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <div class = "required">
+                    <label for="confirmPasswordInput">Confirm Password: <input type="password" id="confirmPasswordInput" name="confirmPasswordInput" placeholder = "confirm password"  required aria-required = "true"></label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <p class = "checkboxAgree"> <input type="checkbox" id = "agree" name="checkbox" value="checkbox"/>
+                    <label for = "agree">I agree with the <a href="">terms and conditions</a> of HomeSmart.com</label>
+                </p>
+            </fieldset>
+
+            <fieldset>
+            <input type="submit" value="Submit Registration" class="btn">
+                </fieldset>
+        </form>
+
+
+
+
+    <!-- jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- plugins -->
+
+
+    <!-- main -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type = "text/javascript" src = "js/respond.min.js"></script>
+
+</body>
+</html>
