@@ -3,7 +3,7 @@
 	Author: You
 */
 
-(function($){
+/*(function($){
 	
 	
 	
@@ -11,7 +11,7 @@
 		
 
 	
-})(jQuery); // end private scope
+})(jQuery); // end private scope  */
 
 
 

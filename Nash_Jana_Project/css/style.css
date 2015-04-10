@@ -17,13 +17,12 @@ header {
     width: 100%;
     text-align:left;
     background-color: #7E6C54;
-    color: #f3f4f5;;
+    color: #f3f4f5;
 }
 header p {
     margin-left:20px;
     display: inline-block;
 }
-
 /*top log in bar / nav bar styling*/
 nav {
     width: 100%;
@@ -72,7 +71,6 @@ img#nav{
     color: #000;
     font-weight: bold;
 }
-
 header button{     /*Dashboard Page*/
     display: inline-block;
     width: 10%;
@@ -80,7 +78,7 @@ header button{     /*Dashboard Page*/
     float: right;
     margin: 10px 20px auto auto;
 }
-/*begin body styling*/
+/*begin generic body styling*/
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #acd9de;
@@ -115,10 +113,7 @@ p {
     font-weight: 400;
     line-height: 1.250em;
 }
-
-
-
-/*begin upper half of content styling*/
+/*begin upper half of content styling for welcome page*/
 .COA {
     margin: 2.25em  auto .75em auto;
 }
@@ -189,7 +184,8 @@ p {
     margin-bottom: 1.250em;
 }
 /*End of Intro*/
-/*mid-section styling*/
+
+/*mid-section styling for welcome page*/
 .reviews{
     background-color:#f3f4f5;
     display: flex;
@@ -225,47 +221,58 @@ blockquote p {
   display: inline;
 }
 /*End of Reviews/Comments*/
-/*Beginning of bottom half*/
+
+/*Beginning of bottom half for welcome page*/
 #trial{
     margin-top: 1.625em;
-    display: flex;
+    display: block;
     overflow: hidden;
 }
-#trial h1 {
-    text-align: left;
-    margin-left: 1.250em;
-    margin-top: 1em;
-    display: block;
+
+#wp{
+    display: inline-block;
+    margin: 0 auto;
+    float: left;
+    width: 50%;
+    margin-top: 1.875em;
+
+}
+#wp h1 {
     width: 100%;
-    height: 1.563em;
-}
-#moon{
+    text-align: left;
     display: block;
-    margin-left: 1.250em;
+    height: auto;
+    margin-left: 2.125em;
+    margin-top: .5em;
 }
-#sun{
-    margin-right: 1.875em;
+#wp img {
+    float: left;
+    width: 45%;
+    margin-top: 1.25em;
+    margin-left: 3.125em;
+}
+#wp1{
+    float: right;
+    display:inline-block;
+    margin-right: 1em;
     margin-top: 1.875em;
 }
-#sun h2{
-    width: 100%;
-
+#wp1 h2{
     text-align: right;
+    margin-right: 1em;
 }
-#sun form{
+#wp1 form{
     text-align: right;
-    width: 100%;
-    display: block;
+    display: inline-block;
     margin-right: 1.250em;
 }
-#sun .submit_btn{
+#wp1 .submit_btn{
     display: inline-block;
     color: #000;
     width:43%;
     height: 2.5em;
     font-size:1em;
     font-weight: bold;
-    margin-left: 1.250em;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
@@ -279,16 +286,10 @@ blockquote p {
     background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
 }
-#moon img {
-    width: 50%;
-    text-align: left;
-    display: block;
-    height: auto;
-    margin-left: 1.250em;
-    margin-top: .938em;
-}
+
 /*end of bottom half*/
-/*footer styling*/
+
+/*footer styling for welcome page*/
 footer{
     width: 100%;
     background-color: #7e6c54;
@@ -308,6 +309,97 @@ footer.short{
 footer.short p {
     font-size: .5em;
 }
+
+/*Register.html specific styling*/
+#rRegister img{
+    float: left;
+    margin: 1.250em auto 0 1.250em;
+}
+#rRegister {                    /*container for form*/
+    display: block;
+    margin: 3em auto 0 auto;
+    max-width: 50%;
+    text-align: center;
+    background-color: #f3f4f5;
+    border: 2px inset #c87346;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    box-shadow: .625em .625em .313em .313em rgba(0,0,0,0.4);
+    -moz-box-shadow: .625em .625em .313em .313em rgba(0,0,0,0.4);
+    -o-box-shadow: .625em .625em .313em .313em rgba(0,0,0,0.4);
+    -webkit-box-shadow: .625em .625em .313em .313em rgba(0,0,0,0.4);
+}
+#rRegister h1{
+    font-size: 2em;
+}
+#rRegister label {
+    width: 18.750em;
+    font-weight: bold;
+}
+#rRegister input {
+    width: 31.250em;
+    line-height: 2em;
+    float: right;
+    font-weight: lighter;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#rRegister fieldset {
+    display: block;
+    text-align: left;
+    border: 0;
+}
+#rRegister input#passwordInput{
+    width:31.250em;
+}
+/*terms and agreement checkbox*/
+
+#rRegister input[type = "checkbox"] {
+    margin-right: .325em;
+    display: inline-block;
+    width: 3em;
+    float: none;
+}
+#rRegister p.checkboxAgree{
+    float: right;
+    display: inline-block;
+    margin: 0 auto;
+    font-size: .75em;
+}
+#rRegister input.btn{
+    color: #000;
+    width:21.5em;
+    height: 2em;
+    font-size:1em;
+    font-weight: bold;
+    line-height: 1em;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    background: #c87346; /* Old browsers */
+    background: -moz-linear-gradient(top,  #c87346 0%, #f4ba52 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c87346), color-stop(100%,#f4ba52)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
+    margin: 1em auto;
+    display: block;
+}
+/* asterisk for required */
+.red {
+    color: red;
+}
+.required:before {
+    content:" *";
+    color: red;
+}
+/* end asterisk */
+
 /* Media Queries*/
 /* Smartphones (portrait and landscape) ----------- */
 @media screen and (max-width: 700px){              /*make comments stack*/
@@ -344,3 +436,4 @@ footer.short p {
         width: 225%;
     }
 }
+
