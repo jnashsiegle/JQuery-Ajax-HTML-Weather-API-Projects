@@ -1,4 +1,12 @@
-/*Jana Nash-Siegle*/
+/*Jana Nash-Siegle
+
+colors:
+#c87346 - brown
+#f4ba52 - tan
+#ffe85f - yellow
+#8ab6be - light blue
+#f3f4f5 - neutral white
+*/
 html {
     box-sizing: border-box;
 }
@@ -10,6 +18,81 @@ html {
     content: "";
     display: table;
     clear: both;
+}
+.tooltip {
+    display:none;
+    z-index: 100000;
+    position:absolute;
+    opacity: 0.80;
+    width: auto;
+    background: rgb(200,115,70); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(200,115,70,1) 0%, rgba(244,186,82,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(200,115,70,1)), color-stop(100%,rgba(244,186,82,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(200,115,70,1) 0%,rgba(244,186,82,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(200,115,70,1) 0%,rgba(244,186,82,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(200,115,70,1) 0%,rgba(244,186,82,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(200,115,70,1) 0%,rgba(244,186,82,1) 100%); /* W3C */
+    padding:10px;
+    color:#000;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    -moz-box-shadow: 0 0 3px 3px #ffe85f;
+    -webkit-box-shadow: 0 0 3px 3px #ffe85f;
+    box-shadow: 0 0 3px 3px #ffe85f;
+}
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+
+.modalDialog > div {
+    width: 800px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background-color: #acd9de;
+}
+.close {
+    background: #c87346;
+    color: #f3f4f5;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+    background: #f4ba52;
+}
+li.liPic:hover {
+    background: url("../images/cityscape.jpg");
 }
 /*Admin Page - Some button styling below #login input.btn */
 header {
@@ -26,7 +109,7 @@ header p {
 /*top log in bar / nav bar styling*/
 nav {
     width: 100%;
-    background-color: #7e6c54;
+    background-color: #7E6C54;
     height: 3.625em;
     top: 0;
     right: 0;
@@ -231,11 +314,9 @@ blockquote p {
 
 #wp{
     display: inline-block;
-    margin: 0 auto;
+    margin: 1.875em auto 0 auto;
     float: left;
     width: 50%;
-    margin-top: 1.875em;
-
 }
 #wp h1 {
     width: 100%;
@@ -292,7 +373,7 @@ blockquote p {
 /*footer styling for welcome page*/
 footer{
     width: 100%;
-    background-color: #7e6c54;
+    background-color: #7E6C54;
     height: 3.625em;
     color: #f3f4f5;
     text-align: center;
@@ -317,8 +398,8 @@ footer.short p {
 }
 #rRegister {                    /*container for form*/
     display: block;
-    margin: 3em auto 0 auto;
-    max-width: 50%;
+    margin: .5em auto 0 auto;
+
     text-align: center;
     background-color: #f3f4f5;
     border: 2px inset #c87346;
@@ -327,10 +408,10 @@ footer.short p {
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
     border-radius: 30px;
-    box-shadow: .625em .625em .313em .313em rgba(0,0,0,0.4);
-    -moz-box-shadow: .625em .625em .313em .313em rgba(0,0,0,0.4);
-    -o-box-shadow: .625em .625em .313em .313em rgba(0,0,0,0.4);
-    -webkit-box-shadow: .625em .625em .313em .313em rgba(0,0,0,0.4);
+    box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
+    -moz-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
+    -o-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
+    -webkit-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
 }
 #rRegister h1{
     font-size: 2em;

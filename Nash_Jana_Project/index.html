@@ -42,13 +42,13 @@
 			<li><fieldset>
 				<div class = "required">
 					<label for = "userName">Log In</label>
-					<input id = "userName" type = "text" placeholder = "Username" required aria-required = "true">
+					<input id = "userName" type = "text" title = "Please enter your username." class = "hsTooltip" placeholder = "Username" required aria-required = "true">
 				</div>
 			</fieldset></li>
 
 			<li> <fieldset>
 				<div class = "required">
-					<label for="passwordInput">Password: <input type="password" id="passwordInput" name="passwordInput" placeholder = "password" required aria-required = "true"></label>
+					<label for="passwordInput">Password: <input type="password" id="passwordInput" name="passwordInput" title = "Please enter your password." class = "hsTooltip" placeholder = "password" required aria-required = "true"></label>
 				</div>
 			</fieldset></li>
 
@@ -56,7 +56,7 @@
 				<input type="submit" value="Log In" class="btn"></li>
 		</ul>
 		</form>
-	<img id = "nav" src = "images/House_Logo.png" alt = "logo">
+	<img id = "nav" src = "images/House_Logo.png" title = "HomeSmart Logo" alt = "logo">
 	</nav>
 	<!--End of log in bar-->
 	<!--beginning of upper half of page-->
@@ -65,7 +65,7 @@
 		<img src = "images/cityscape.jpg" alt = "Cityscape">
 		<div id = "features">
 			<ul>
-				<li>Family &amp; Team Collaboration</li>
+				<li class = "liPic">Family &amp; Team Collaboration</li>
 				<li>Project &amp; Time Management</li>
 				<li>Interactive Calendars</li>
 				<li>Automatic Notifications</li>
@@ -74,8 +74,76 @@
 				<li>Complete Scheduling and Tracking Capability</li>
 			</ul>
 			<h1>Join Now!  It'll change your life!</h1>
+	<!--Modal for Registration -->
+			<a href = "#regModal"><button>Join</button></a>
+			<div id="regModal" class="modalDialog">
+				<div>
+					<a href="#close" title="Close" class="close">X</a>
+						<form id = "rRegister" method = "post">
+						<img src = "images/House_Logo.png" alt = "HomeSmart.com">
+						<h1>Registration</h1>
+						<fieldset>
+							<div class = "">
+								<label for = "fname">What is your first name?</label>
+								<input id = "fname" type = "text" title = "Please enter your first name." class = "hsTooltip" placeholder = "first name">
+							</div>
+						</fieldset>
 
-			<button>Join</button>
+						<fieldset>
+							<div class = "">
+								<label for = "lname">What is your last name?</label>
+								<input id = "lname" type = "text" title = "Please enter your last name." class = "hsTooltip" placeholder = "last name">
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class = "required">
+								<label for = "rUserName">What will your username be?</label>
+								<input id = "rUserName" type = "text" title = "Please enter your desired username." class = "hsTooltip" placeholder = "Username" required aria-required = "true">
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class = "required">
+								<label for = "email">Your email address</label>
+								<input id = "email" name = "email" type = "email" title = "Please enter your email." class = "hsTooltip" placeholder = "user@mydomain.com" required aria-required = "true">
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class = "required">
+								<label for="passwordInput1">Password: <input type="password" id="passwordInput1" name="passwordInput" title = "Please enter your password." class = "hsTooltip" placeholder = "password" required aria-required = "true">
+								</label>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<div class = "required">
+								<label for="confirmPasswordInput">Confirm Password: <input type="password" id="confirmPasswordInput" name="confirmPasswordInput" title = "Please confirm your password." class = "hsTooltip" placeholder = "confirm password"  required aria-required = "true"></label>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<p class = "checkboxAgree"> <input type="checkbox" id = "agree" name="checkbox" title = "You must agree to our terms and conditions." class = "hsTooltip" value="checkbox"/>
+								<label for = "agree">I agree with the <a href="">terms and conditions</a> of HomeSmart.com</label>
+							</p>
+						</fieldset>
+
+						<fieldset>
+							<input type="submit" value="Submit Registration" class="btn">
+						</fieldset>
+					</form>
+				</div>
+			</div>
+
+
+
+
+
+
+
+
+
 		</div>
 	</div>
 	<!--end of Registration-->
@@ -95,33 +163,33 @@
 <div id = "trial"> <!-- Register div -->
 	<div id = "wp">
 <h1 class = "COA">Make your home a SMART home.</h1>
-	<img src = "images/homedim.png" alt = "HomeSmart">
+	<img src = "images/homedim.png" title = "We can make your home a Smart home, today!" alt = "HomeSmart" >
 		</div>
 	<div id="wp1">
 		<h2>Sign up NOW for a free 30-day trial.</h2>
 		<form id = "register" method = "post">
 			<fieldset>
 				<div class = "required">
-					<label for = "fname">What is your first name?</label>
-					<input id = "fname" type = "text" placeholder = "first name" required aria-required = "true">
+					<label for = "rFname">What is your first name?</label>
+					<input type = "text" id = "rFname"  title = "Please enter your first name." class = "hsTooltip" placeholder = "first name" required aria-required = "true">
+				</div>
+				</fieldset>
+			<fieldset>
+				<div class = "required">
+					<label for = "rLname">What is your last name?</label>
+					<input id = "rLname" type = "text" title = "Please enter your last name." class = "hsTooltip" placeholder = "last name" required aria-required = "true">
 				</div>
 			</fieldset>
 			<fieldset>
 				<div class = "required">
-					<label for = "lname">What is your last name?</label>
-					<input id = "lname" type = "text" placeholder = "last name" required aria-required = "true">
-				</div>
-			</fieldset>
-			<fieldset>
-				<div class = "required">
-					<label for = "email">Your email address</label>
-					<input id = "email" name = "email" type = "email" placeholder = "user@mydomain.com" required aria-required = "true">
+					<label for = "rEmail">Your email address</label>
+					<input id = "rEmail" name = "email" type = "email" title = "Please enter your email." class = "hsTooltip" placeholder = "user@mydomain.com" required aria-required = "true">
 				</div>
 			</fieldset>
 			<fieldset>
 				<div class = "required">
 					<label for = "email1">Re-type your email address</label>
-					<input id = "email1" name = "email" type = "email" placeholder = "user@mydomain.com" required aria-required = "true">
+					<input id = "email1" name = "email" type = "email" title = "Please re-type your email." class = "hsTooltip" placeholder = "user@mydomain.com" required aria-required = "true">
 				</div>
 			</fieldset>
 			<p>You will receive an email to confirm your trial.</p>
