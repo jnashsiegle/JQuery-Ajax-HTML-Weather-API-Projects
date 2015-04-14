@@ -4,19 +4,10 @@
 	Author: Jana Nash-Siegle
 */
 
-/*(function($){
 
 
 
-
-		
-
-	
-})(jQuery); // end private scope  */
-
-
-
-
+//JQuery for Tooltips site wide
 $(document).ready(function() {
 // Tooltip only Text
     $('.hsTooltip').hover(function(){
@@ -31,12 +22,11 @@ $(document).ready(function() {
         // Hover out code
         $(this).attr('title', $(this).data('tipText'));   //restore title attr
         $('.tooltip').remove();             //remove tooltip
-    }).mousemove(function(e) {
+    })
+        .mousemove(function(e) {
         var mousex = e.pageX + 20;       //gets us the X coordinates
         var mousey = e.pageY + 10;       //gets us the Y coordinates
-                                            //so we can follow the mouse around
-        $('.tooltip')
-            .css({ top: mousey, left: mousex })
+        $('.tooltip').css({ top: mousey, left: mousex });   //so we can follow the mouse around
     });
 });
 
@@ -44,3 +34,15 @@ $(document).ready(function() {
 
 
 
+//JQuery for Project Page Accordion and h2 color toggle on active
+$(document).ready(function() {
+    $('div.project h2').click(function(e){     //we do not want any h2's actively open on load
+        e.stopImmediatePropagation();           //so let's stop any default browser acts
+        e.preventDefault();
+        var div = $(this).next('section');    //this creates a div out of the current p element
+        $(this).toggleClass('active');    //keeps the active h2 background changed to active css
+        $('div.project section').slideUp();              //calls the p to animate with a slide up to close...
+        if (div.is(":visible")) return;         //if it is visible else...
+        div.slideDown();                        //it will open on a slide down
+    });
+});
