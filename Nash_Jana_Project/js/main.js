@@ -10,6 +10,7 @@
 (function($) {
 
     //JQuery for Tooltips site wide
+
 // Tooltip only Text
     $('.hsTooltip').hover(function () {
         // Hover over code
@@ -33,17 +34,38 @@
 
 //JQuery for Project Page Accordion and h2 color toggle on active
 
-    var highlight = $(this).attr('div.project h2');
-
-    $(highlight).click(function (e) {     //we do not want any h2's actively open on load
+    $('div.project h2').click(function(e){     //we do not want any h2's actively open on load
         e.stopImmediatePropagation();           //so let's stop any default browser acts
         e.preventDefault();
         var div = $(this).next('section');    //this creates a div out of the current p element
         $(this).toggleClass('active');    //keeps the active h2 background changed to active css
-        $(highlight).slideUp();              //calls the p to animate with a slide up to close...
+        $('div.project section').slideUp();              //calls the p to animate with a slide up to close...
         if (div.is(":visible")) return;         //if it is visible else...
         div.slideDown();                        //it will open on a slide down
     });
+
+//JQuery for Modal
+
+
+        ('.modalClick').on('click', function (e) {
+            e.preventDefault();
+            $('#overlay')
+                .fadeIn()
+                .find('#addModal')
+                .fadeIn();
+
+        })
+
+        ('.close').on('click', function (e) {
+            e.preventDefault();
+            $('#overlay')
+                .fadeOut()
+                .find('#addModal')
+                .fadeOut();
+
+        });
+
+
 
 
 
