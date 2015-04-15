@@ -22,35 +22,96 @@ html {
     clear: both;
 }
 @font-face {
-    font-family: 'WebSymbolsRegular';
-    src: url('websymbols/websymbols-regular-webfont.eot');
-    src: url('websymbols/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
-    url('websymbols/websymbols-regular-webfont.woff') format('woff'),
-    url('websymbols/websymbols-regular-webfont.ttf') format('truetype'),
-    url('websymbols/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-family: 'icomoon';
+    src:url('fonts/icomoon.eot?-iwrjwx');
+    src:url('fonts/icomoon.eot?#iefix-iwrjwx') format('embedded-opentype'),
+    url('fonts/icomoon.woff?-iwrjwx') format('woff'),
+    url('fonts/icomoon.ttf?-iwrjwx') format('truetype'),
+    url('fonts/icomoon.svg?-iwrjwx#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
-.ca-icon{
-    font-family: 'WebSymbolsRegular', cursive;
-    color: #c5e4f4;
-    font-size: 90px;
-    text-shadow: 1px 0 1px rgba(255,255,255,0.7);
-    line-height: 150px;
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    left: 0;
-    top: 0;
-    text-align: center;
-    -webkit-transition: all 200ms linear;
-    -moz-transition: all 200ms linear;
-    -o-transition: all 200ms linear;
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'icomoon';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 2em;
+    padding-right: 10px;
 
-    transition: all 200ms linear;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+
 }
-hr.gradient_one {
+
+.icon-home:before {
+    content: "\e900";
+}
+
+.icon-pencil:before {
+    content: "\e905";
+}
+
+.icon-paste:before {
+    content: "\e92d";
+}
+
+.icon-calendar:before {
+    content: "\e953";
+}
+
+.icon-user-plus:before {
+    content: "\e973";
+}
+
+.icon-user-minus:before {
+    content: "\e974";
+}
+
+.icon-hour-glass:before {
+    content: "\e979";
+}
+
+.icon-cog:before {
+    content: "\e994";
+}
+
+.icon-clipboard:before {
+    content: "\e9b8";
+}
+
+.icon-tree:before {
+    content: "\e9bc";
+}
+
+.icon-plus:before {
+    content: "\ea0a";
+}
+
+.icon-minus:before {
+    content: "\ea0b";
+}
+.icon-list-numbered:before {
+    content: "\e9b9";
+}
+.icon-alarm:before {
+    content: "\e950";
+}
+.icon-pushpin:before {
+    content: "\e946";
+}
+.icon-envelop:before {
+    content: "\e945";
+}
+.icon-profile:before {
+    content: "\e923";
+}
+.icon-circle-down:before {
+    content: "\ea43";
+}
+hr.gradient_one {       /*Horizontal Rule for in-between Projects */
     border: 0;
     height: 1px;
     background: #c87346;
@@ -133,18 +194,20 @@ hr.gradient_one {
     background: #f4ba52;
 }
 
-/*Admin Page - Some button styling below #login input.btn */
+/*Admin Page TOPBAR - Some button styling below #login input.btn */
 header {
     display: inline-block;
     width: 100%;
     text-align: center;
     background-color: #7E6C54;
     color: #f3f4f5;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 header p {
+   text-align: center;
     display: inline-block;
-    vertical-align: middle;
 }
 /*top log in bar / nav bar styling*/
 nav {
@@ -195,14 +258,21 @@ img#nav{
     font-weight: bold;
     border: none;
 }
-header button{     /*Dashboard Page*/
+header button, #add{     /*Sign Out Button*/
     display: inline-block;
     width: 10%;
     height: 2em;
     float: right;
     margin: 10px 10% 10px auto;
     border: none;
-
+}
+#dashboard {    /*Dashboard button*/
+    float: left;
+    margin:10px 0 10px 10%;
+}
+a, body > header > a > button, #proForm > fieldset:nth-child(7) > input  {
+    text-decoration: none;
+    color: #7E6C54;
 }
 /*begin generic body styling*/
 body {
@@ -246,7 +316,6 @@ p {
 #intro, #trial, #projects {
     max-width: 90%;
     margin: 0 auto;
-    text-align: center;
     background-color: #f3f4f5;
     border: 2px inset #c87346;
     -webkit-border-radius: 30px;
@@ -262,7 +331,7 @@ p {
 #intro img {
     max-width: 60%;
     padding-top: 4px;
-    margin: 0 auto;
+    margin: 0 auto 0 20px;
     height: auto;
     display: inline-block;
     -webkit-border-radius: 30px;
@@ -275,15 +344,20 @@ p {
     font-size: 1.500em;
     line-height: 2em;
     display: inline-block;
-    margin: 0 auto;
+    margin: 20px auto ;
+    list-style:none;
 }
 #features {
     margin: 0 auto;
     display: inline-block;
     vertical-align: top;
 }
+#features h1{
+    text-align: right;
+}
 #features li {
     margin: 0 auto;
+    text-align: left;
 }
 #features h2 {
     margin: 1.255em auto 1.875em;
@@ -307,8 +381,8 @@ p {
     background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
-    margin-bottom: 1.250em;
     border: none;   /*override user agent stylesheet*/
+    margin: 0 0 1.250em 200px;
 }
 /*End of Intro*/
 
@@ -410,6 +484,7 @@ blockquote p {
     background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
+    border: none;
 }
 
 /*end of bottom half*/
@@ -440,7 +515,7 @@ footer.short p {
     float: left;
     margin: 1.250em auto 0 1.250em;
 }
-#rRegister {                    /*container for form*/
+#rRegister, #proForm {                    /*container for form*/
     display: block;
     margin: .5em auto 0 auto;
     text-align: center;
@@ -456,21 +531,22 @@ footer.short p {
     -o-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
     -webkit-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
 }
-#rRegister h1{
+#rRegister, #proForm h1{
     font-size: 2em;
+    text-align: center;
 }
-#rRegister label {
+#rRegister, #proForm label {
     width: 18.750em;
     font-weight: bold;
 }
-#rRegister input {
+#rRegister, #proForm input {
     width: 31.250em;
     line-height: 2em;
     float: right;
     font-weight: lighter;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
-#rRegister fieldset {
+#rRegister, #proForm fieldset {
     display: block;
     text-align: left;
     border: 0;
@@ -492,7 +568,7 @@ footer.short p {
     margin: 0 auto;
     font-size: .75em;
 }
-#rRegister input.btn{
+#rRegister, #proForm input.btn{
     color: #000;
     width:21.5em;
     height: 2em;
@@ -513,6 +589,7 @@ footer.short p {
     background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
     margin: 1em auto;
     display: block;
+    border: none;
 }
 /* asterisk for required */
 .red {
@@ -525,13 +602,15 @@ footer.short p {
 /* end asterisk */
 
 /*Project Specific Styling */
+
 .project {
-    /*border: 2px solid #C87346;*/
     margin: 0 20px 20px 20px;
     padding: 0;
 }
+
+/*Project Listing*/
 #accordion{
-    margin: 20px;
+    margin: 100px 20px;
     padding:5px 15px;
     cursor:pointer;
 }
@@ -557,99 +636,52 @@ footer.short p {
     padding:0 50px;
     text-align: left;
 }
-/*style the main menu*/
-#menu, #menu li {
-    display:block;
-    position:relative;
-    text-align:center;
-    padding:4px 10px;
-    margin:0 auto;
-    border-radius:0 5px 5px 5px;
-    -moz-border-radius:0 5px 5px 5px;
-    -webkit-border-radius:0 5px 5px 5px;
-    color: #000;
-    font-weight: bold;
+#projects > a > img{
+    display: inline;
+    margin: 5px 0 auto 5%;
+    float: left;
+    overflow: hidden;
+    width: 6%;
 }
-
-#menu {
-    list-style:none;
+h1#add {
+    font-size: 1.5em;
+    text-align: right;
     display: inline-block;
-    background: #c87346; /* Old browsers */
-    background: -moz-linear-gradient(top, #c87346 0%, #f4ba52 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c87346), color-stop(100%, #f4ba52)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #c87346 0%, #f4ba52 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #c87346 0%, #f4ba52 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #c87346 0%, #f4ba52 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #c87346 0%, #f4ba52 100%); /* W3C */
-    z-index: 10000000;
-    margin: 10px 0 10px 10%;
-    float:left;
-
-}
-#menu li:hover {
-    border:1px solid #b7b7b7;
-    padding:4px 9px;
-    /*rounded corners to the top left and right */
-    border-radius:5px 5px 0 0;
-    -moz-border-radius:5px 5px 0 0;
-    -webkit-border-radius:5px 5px 0 0;
-    background: #f4ba52; /* Old browsers */
-    background: -moz-linear-gradient(top, #f4ba52 0%, #c87346 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4ba52), color-stop(100%, #c87346)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #f4ba52 0%, #c87346 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #f4ba52 0%, #c87346 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #f4ba52 0%, #c87346 100%); /* IE10+ */
-    background: linear-gradient(to bottom, #f4ba52 0%, #c87346 100%); /* W3C */
-}
-#menu li a {
-    font-size:1em;
-    color: #000;
-    font-weight: bold;
-    display:inline;
-    outline:0;
-    text-decoration:none;
-}
-#menu li .menu-container2 a{
-    font-size: .75em;
-}
-#menu li:hover a {
-    color:#161616;
-    margin: 0 10px 0 10px;
-}
- .menu-container2{
-     width: 280px;
-    margin:7px auto;
-    position:absolute;
-     display: inline;
-    left:-999em;
-    padding:2px 0 10px 0;
-    border:1px solid #b7b7b7;
-    border-top:none;
-    border-radius:0 5px 5px 5px;
-    -moz-border-radius:0 5px 5px 5px;
-    -webkit-border-radius:0 5px 5px 5px;
-     background: #f4ba52; /* Old browsers */
-     background: -moz-linear-gradient(top, #f4ba52 0%, #c87346 100%); /* FF3.6+ */
-     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4ba52), color-stop(100%, #c87346)); /* Chrome,Safari4+ */
-     background: -webkit-linear-gradient(top, #f4ba52 0%, #c87346 100%); /* Chrome10+,Safari5.1+ */
-     background: -o-linear-gradient(top, #f4ba52 0%, #c87346 100%); /* Opera 11.10+ */
-     background: -ms-linear-gradient(top, #f4ba52 0%, #c87346 100%); /* IE10+ */
-     background: linear-gradient(to bottom, #f4ba52 0%, #c87346 100%); /* W3C */
-}
- .menu-container2 h3{
-     text-align: left;
-     margin-left: 10px;
-     font-size: 1em;
- }
-
-#menu li:hover .menu-container2{
-    top:auto;
-    left:-1px;
+    width: 50%;
 }
 
+fieldset#status{
+    margin: 0 50px 0 50px;
+}
+a.radio-picture {
+    border: 1px solid black;
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    width: 80px;
+    height: 80px;
+    }
 
-
-/* CSS For Dropdown Menu End */
+a.radio-picture.highlighted{
+    border: 2px solid #C87346;
+}
+a#statusCompleted {
+    background: url("../images/new.png") no-repeat scroll 0 0 white;
+  }
+a#statusUrgent {
+    background: url("../images/urgent.png") no-repeat scroll 0 0 white;
+}
+a#statusNormal {
+    background: url("../images/normal.png") no-repeat scroll 0 0 white;
+}
+a#statusDelayed {
+      background: url("../images/delayed.png") no-repeat scroll 0 0 white;
+}
+.hidden {
+    left: -10000px;
+    position: absolute;
+    top: -1000px;
+}
 
 
 /* Media Queries*/
@@ -686,6 +718,7 @@ footer.short p {
         margin-left: .938em;
         margin-bottom: 1.250em;
         width: 225%;
+        border: none;
     }
 }
 

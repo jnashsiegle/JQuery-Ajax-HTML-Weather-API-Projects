@@ -11,28 +11,70 @@
 <body>
 <!--top bar / navigation -->
 <header>
-    <p>Welcome Jane, the date is April 15, 2015</p>
+    <p>Welcome Jane to your Project Keeper</p>
 
-        <!-- First Menu Start - project.html-->
-    <ul id="menu">
-        <li><a href="admin.html">Dashboard</a>
-               <div class="menu-container2">
-                        <h3>Or Shall we jump to:</h3>
-                        <a href = "">Account Settings</a>
-                        <a href = "">Set User Controls</a>
-                        <a href = "">Calendars</a>
-                </div>
-            </li>
-    </ul>
-    <button>Sign Out</button>
+    <!--Dashboard button -->
+    <button id = "dashboard"><a href="admin.html">Dashboard</a></button>
+
+    <!--Sign Out Button-->
+    <a href = "index.html"><button>Sign Out</button></a>
 </header>
 
 <!--Main content -->
 
 <div id = "container">
     <div id = "projects">
+        <a href = "index.html"><img src = "images/House_Logo.png" alt = "HomeSmart.com"></a>
 
-<h1> My Projects</h1>
+        <h1 id = "add"><span class="icon-plus"></span><a href = "#projModal">Add Project</a></h1>
+
+        <!--Begin Add Project Modal -->
+
+        <div id="projModal" class="modalDialog">
+            <div>
+                <a href="#" title="Close" class="close">X</a>
+                <form id = "proForm" method = "post">
+                    <img src = "images/House_Logo.png" alt = "HomeSmart.com">
+                    <h1>Add A New Project</h1>
+                    <fieldset>
+
+                            <label for = "pname">What is the project name?</label>
+                            <input id = "pname" type = "text" title = "Please enter the project name." class = "hsTooltip" placeholder = "name of project">
+
+                    </fieldset>
+
+                    <fieldset>
+                            <label for = "pDesc">Project Description</label>
+                            <input id = "pDesc" type = "text" title = "Please describe the project." class = "hsTooltip" placeholder = "project description">
+
+                    </fieldset>
+
+                    <fieldset>
+
+                            <label for = "pDate">When is the project due?</label>
+                            <input id = "pDate" type = "text" title = "Please enter the project due date" class = "hsTooltip" placeholder = "project due date" required aria-required = "true">
+                    </fieldset>
+
+                    <fieldset id = "status">
+                        <legend>Status of Project</legend>
+                        <p> <label class = "lStatus" for = "Normal">New</label><input type="radio" value="1" name="New" id="Normal" class="hidden" /> <a id="statusNormal" href="javascript:set_radio('Normal');" class="radio-picture">&nbsp;</a>
+
+                            <label for = "Urgent">Urgent</label><input type="radio" value="2" name="Urgent" id="Urgent" class="hidden" /> <a id="statusUrgent" href="javascript:set_radio('Urgent');" class="radio-picture">&nbsp;</a>
+
+                            <label for = "Delayed">Delayed</label><input type="radio" value="3" name="Delayed" id="Delayed" class="hidden" /> <a id="statusDelayed" href="javascript:set_radio('Delayed');" class="radio-picture">&nbsp;</a>
+
+                            <label for = "Completed">Completed</label><input type="radio" value="4" name="Completed" id="Completed" class="hidden" /> <a id="statusCompleted" href="javascript:set_radio('Completed');" class="radio-picture">&nbsp;</a>
+                            </p>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <input type="submit" value="Save Project" class="btn">
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
 
         <div id="accordion">
             <div class = "project">
@@ -77,7 +119,6 @@
                 </div>
         </div>
     </div>
-
 </div>
 
 

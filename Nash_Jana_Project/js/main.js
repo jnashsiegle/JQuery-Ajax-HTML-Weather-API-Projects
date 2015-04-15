@@ -46,3 +46,40 @@ $(document).ready(function() {
         div.slideDown();                        //it will open on a slide down
     });
 });
+
+
+//js for radio buttons
+
+function set_radio($inputid) {      //takes the radio button id and passes it to the button
+    $("input#" + $inputid).click();
+}
+$(function () {
+    $(".radio-picture").click(function() {    //on click add red border to chosen status image
+        //$(this).css('border', "solid 2px red") ;
+        // Unhighlight all the images
+        $(this).css("background-image", "url(../images/new.png").toggleClass('highlighted');
+
+
+    });
+
+
+    });
+
+
+$(document).ready(function() {
+
+    //set opacity to 1.0 for all the images
+
+
+    $('.radio-picture').css('opacity', 1);
+
+    // when hover over the selected image change the opacity to 1
+    $('.radio-picture').hover(
+        function(){
+            $(this).css("background-image", "url(../images/new.png").stop().fadeTo('slow', 0.4);
+        },
+        function(){
+            $(this).css("background-image", "url(../images/new.png").stop().fadeTo('slow', 1);
+        });
+
+});
