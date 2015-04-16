@@ -46,15 +46,13 @@
 
 //JQuery for Modal
 
-
-
-    $('.modalClick').click(function(e) {
-        e.stopImmediatePropagation();
-        e.preventDefault();
-        $('#overlay')
-            .fadeIn()
+    $('.modalClick').click(function(e) {   //activates on click function to open modal
+        e.stopImmediatePropagation();       //stops other event handlers from being called
+        e.preventDefault();                 //stops the default action from activating
+        $('#overlay')                       //grabs the overlay
+            .fadeIn(1000)                       //fades it in slowly rather than all at once appearing
             .find('#modal')
-            .fadeIn();
+            .fadeIn(2000);
 
     });
 
@@ -62,10 +60,21 @@
         e.stopImmediatePropagation();
         e.preventDefault();
         $('#overlay')
-            .fadeOut()
+            .fadeOut(2000)
             .find('#modal')
-            .fadeOut();
+            .fadeOut(1000);
 
+    });
+
+//jQuery for mouseover
+
+
+
+    $('label.mystatus').mouseover(function() {
+        $(this).fadeTo('1000', .2, 'swing');
+    });
+    $('label.mystatus').mouseout(function() {
+        $(this).fadeTo('1000', 1, 'linear');
     });
 
 

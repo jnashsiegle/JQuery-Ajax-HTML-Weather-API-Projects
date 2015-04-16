@@ -149,6 +149,7 @@ hr.gradient_one {       /*Horizontal Rule for in-between Projects */
     -moz-box-shadow: 1px 1px 3px #000;
     -webkit-box-shadow: 1px 1px 3px #000;
     box-shadow: 1px 1px 3px #000;
+    cursor: pointer;
 }
 
 .close:hover {
@@ -214,7 +215,7 @@ header button{
     float: left;
     margin:10px 0 10px 10%;
 }
-.submit_btn, input.btn, header button {
+.submit_btn, input.btn, header button, button {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: normal;
     color: #000;
@@ -240,12 +241,43 @@ header button{
 
 
 }
-/*++++++++++++++++++++++++++++++++++++++++++++Form ++++++++++++++++++++++++++*/
+/*++++++++++++++++++++++++++++++++++++++++++++Form & all things Modal ++++++++++++++++++++++++++*/
+.modalClick  {
+    font-size: 1.5em;
+    text-align: right;
+    display: inline-block;
+    width: 85%;
+}
+.modalClick a {
+    text-decoration: none;
+    color: #c87346;
+}
+#modal{
+    position: fixed;
+    top: 20%;
+    left: 25%;
+    width: 100%;
+    max-width: 630px;
+    min-width: 320px;
+    display: none;
+}
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
 fieldset{
     border: none;
 }
 #addForm {                    /*container for form*/
     display: block;
+    width: 100%;
+    height: auto;
     margin: .5em auto 0 auto;
     text-align: center;
     background-color: #f3f4f5;
@@ -268,6 +300,7 @@ fieldset{
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: normal;
     width: 18.750em;
+    line-height: 2em;
 }
 #addForm input {
     width: 31.250em;
@@ -283,6 +316,31 @@ fieldset{
     display: block;
     text-align: left;
     border: 0;
+}
+#addForm fieldset.radiogroup  {
+    text-align: center;
+    padding: .125em;
+}
+fieldset.radiogroup legend {
+    font-weight: Normal;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-left: 20px;
+    font-size: 100%;
+    color: #C87346;
+}
+label > input{ /* HIDE RADIO */
+    display:none;
+}
+label > input + img{ /* IMAGE STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+    margin-right: 20px;
+}
+label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
+    border:2px solid #f00;
+}
+button#addButton {
+    margin-bottom: 20px;
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin generic body styling*/
 body {
@@ -458,10 +516,7 @@ blockquote p {
     display: inline-block;
     margin-right: 1.250em;
 }
-
-
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end of bottom half*/
-
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++footer styling*/
 footer{
     width: 100%;
@@ -486,7 +541,6 @@ footer.short p {
 input#passwordInput{
     width:31.250em;
 }
-
 /* ++++++++++++++++++++++++++++++++++++++++asterisk for required */
 .red {
     color: red;
@@ -503,7 +557,7 @@ input#passwordInput{
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Project ACCORDION*/
 #accordion{
-    margin: 100px 20px;
+    margin: 50px 20px;
     padding:5px 15px;
     cursor:pointer;
 }
@@ -536,52 +590,16 @@ input#passwordInput{
     overflow: hidden;
     width: 6%;
 }
-
-
-fieldset.radiogroup  {
-
-    margin-bottom: 1.25em;
-    padding: .125em;
+.projTitle{
+    text-align: center;
 }
 
-fieldset.radiogroup legend {
-
-    padding: 0;
-    font-weight: bold;
-    margin-left: 20px;
-    font-size: 100%;
-    color: black;
-}
-#addForm{
-    width: 100%;
-    height: auto;
-
-}
-#modal{
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    width: 100%;
-
-    max-width: 630px;
-    min-width: 320px;
-
-    margin-left:-150px;
-    margin-top: -100px;
-    display: none;
 
 
-}
-#overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    background-color: rgba(0,0,0,0.5);
-    display: none;
-}
+
+
+
+
 
 
 

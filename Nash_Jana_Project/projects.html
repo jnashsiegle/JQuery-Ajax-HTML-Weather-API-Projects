@@ -32,7 +32,7 @@
                 <div id = "add">
                     <form id = "addForm">
                         <span class = "close">X</span>
-                        <h3 class = "header">Add Project</h3>
+                        <h2 class = "header">Add Project</h3>
                         <fieldset>
                             <label for = "pname">What is the project name?</label>
                             <input id = "pname" type = "text" title = "Please enter the project name." class = "hsTooltip" placeholder = "name of project">
@@ -46,18 +46,19 @@
                             <input id = "pDate" type = "text" title = "Please enter the project due date" class = "hsTooltip" placeholder = "project due date" required aria-required = "true">
                         </fieldset>
                         <fieldset class = "radiogroup">
+                            <legend>What is the status of the project:</legend>
                             <br>
                             <label class = "mystatus">
-                                <input type = "radio" name = "status" id = "urgent">
+                                <input type = "radio" name = "status" id = "normal" class = "disappear"><img class = "radio-picture, hsTooltip" src = "images/normal.png" title = "Normal" alt = "normal">
                             </label>
                             <label class = "mystatus">
-                                <input type = "radio" name = "status" id = "normal">
+                                <input type = "radio" name = "status" id = "urgent" class = "disappear"><img class = "radio-picture, hsTooltip" src = "images/urgent.png" title = "Urgent" alt="urgent">
                             </label>
                             <label class = "mystatus">
-                                <input type = "radio" name = "status" id = "delayed">
+                                <input type = "radio" name = "status" id = "delayed" class = "disappear"><img class = "radio-picture, hsTooltip" src = "images/delayed.png" title = "Delayed" alt = "normal">
                             </label>
                             <label class = "mystatus">
-                                <input type = "radio" name = "status" id = "complete">
+                                <input type = "radio" name = "status" id = "complete" class = "disappear"><img class = "radio-picture, hsTooltip" src = "images/complete.png" title = "Complete" alt = "delayed">
                             </label>
                         </fieldset>
                         <br>
@@ -67,7 +68,7 @@
                 </div> <!--closes add div-->
             </div> <!--closes modal -->
         </div>  <!--closes overlay -->
-        <h1>Current Projects</h1>
+        <h1 class = "projTitle">Current Projects</h1>
          <div id="accordion">
             <div class = "project">
                 <h2 class = "toggle">Project 1</h2>
@@ -76,6 +77,7 @@
                     <p>Project Description&#58;</p>
                     <p>Project Due Date&#58; </p>
                     <p>Project Status&#58;</p>
+                    <button class = "projbtn">Edit</button><button class = "projbtn">Delete</button>
                 </section>
                 <hr class = "gradient_one">
                 </div>
