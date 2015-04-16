@@ -1,17 +1,13 @@
 /*  
-	HomeSmart.com
-	PWA-2
-	Author: Jana Nash-Siegle
-*/
+ Your Project Title
+ Author: Jana Nash-Siegle
+ */
 
+(function($){
 
+    /*JQuery for Tooltips site wide */
 
-
-(function($) {
-
-    //JQuery for Tooltips site wide
-
-// Tooltip only Text
+/* Tooltip only Text*/
     $('.hsTooltip').hover(function () {
         // Hover over code
         var title = $(this).attr('title');         //using title attribute as our variable
@@ -32,7 +28,7 @@
         });
 
 
-//JQuery for Project Page Accordion and h2 color toggle on active
+/*JQuery for Project Page Accordion and h2 color toggle on active*/
 
     $('div.project h2').click(function(e){     //we do not want any h2's actively open on load
         e.stopImmediatePropagation();           //so let's stop any default browser acts
@@ -44,26 +40,23 @@
         div.slideDown();                        //it will open on a slide down
     });
 
-//JQuery for Modal
+/*JQuery for Modal*/
 
 
-
-    $('.modalClick').click(function(e) {
-        e.stopImmediatePropagation();
+    ('.modalClick').on('click', function (e) {
         e.preventDefault();
         $('#overlay')
             .fadeIn()
-            .find('#modal')
+            .find('#addModal')
             .fadeIn();
 
-    });
+    })
 
-    $('.close').click(function(e) {
-        e.stopImmediatePropagation();
+    ('.close').on('click', function (e) {
         e.preventDefault();
         $('#overlay')
             .fadeOut()
-            .find('#modal')
+            .find('#addModal')
             .fadeOut();
 
     });
@@ -74,16 +67,8 @@
 
 
 
+})(jQuery); // end private scope
 
 
 
 
-
-
-
-
-
-
-
-
-})(jQuery);

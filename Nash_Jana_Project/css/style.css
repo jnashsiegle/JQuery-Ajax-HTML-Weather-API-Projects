@@ -11,6 +11,7 @@ colors:
 
 html {
     box-sizing: border-box;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -21,6 +22,8 @@ html {
     display: table;
     clear: both;
 }
+
+/*+++++++++++++++++++++++++++++++++Icons ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @font-face {
     font-family: 'icomoon';
     src:url('fonts/icomoon.eot?-iwrjwx');
@@ -33,63 +36,50 @@ html {
 }
 
 [class^="icon-"], [class*=" icon-"] {
-    font-family: 'icomoon';
+    font-family: 'icomoon', monospace;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 2em;
     padding-right: 10px;
-
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
 
 }
-
 .icon-home:before {
     content: "\e900";
 }
-
 .icon-pencil:before {
     content: "\e905";
 }
-
 .icon-paste:before {
     content: "\e92d";
 }
-
 .icon-calendar:before {
     content: "\e953";
 }
-
 .icon-user-plus:before {
     content: "\e973";
 }
-
 .icon-user-minus:before {
     content: "\e974";
 }
-
 .icon-hour-glass:before {
     content: "\e979";
 }
-
 .icon-cog:before {
     content: "\e994";
 }
-
 .icon-clipboard:before {
     content: "\e9b8";
 }
-
 .icon-tree:before {
     content: "\e9bc";
 }
-
 .icon-plus:before {
     content: "\ea0a";
 }
-
 .icon-minus:before {
     content: "\ea0b";
 }
@@ -120,7 +110,6 @@ hr.gradient_one {       /*Horizontal Rule for in-between Projects */
     background-image: -ms-linear-gradient(left, #f4ba52, #c87346, #f4ba52);
     background-image: -o-linear-gradient(left, #f4ba52, #c87346, #f4ba52);
 }
-
 .tooltip {
     display:none;
     z-index: 100000;
@@ -142,34 +131,6 @@ hr.gradient_one {       /*Horizontal Rule for in-between Projects */
     -moz-box-shadow: 0 0 3px 3px #ffe85f;
     -webkit-box-shadow: 0 0 3px 3px #ffe85f;
     box-shadow: 0 0 3px 3px #ffe85f;
-}
-.modalStyle {
-    position: fixed;
-    font-family: Arial, Helvetica, sans-serif;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: rgba(0,0,0,0.8);
-    z-index: 99999;
-    opacity:0;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
-    transition: opacity 400ms ease-in;
-    pointer-events: none;
-}
-.modalStyle:target {
-    opacity:1;
-    pointer-events: auto;
-}
-
-.modalStyle > div {
-    width: 800px;
-    position: relative;
-    margin: 10% auto;
-    padding: 5px 20px 13px 20px;
-    border-radius: 10px;
-    background-color: #acd9de;
 }
 .close {
     background: #c87346;
@@ -193,8 +154,8 @@ hr.gradient_one {       /*Horizontal Rule for in-between Projects */
 .close:hover {
     background: #f4ba52;
 }
+/* ++++++++++++++++++++++++++++++++++++++++Admin Page TOPBAR - Some button styling below #login input.btn */
 
-/*Admin Page TOPBAR - Some button styling below #login input.btn */
 header {
     display: inline-block;
     width: 100%;
@@ -204,12 +165,11 @@ header {
     margin: 0 auto;
     overflow: hidden;
 }
-
 header p {
    text-align: center;
     display: inline-block;
 }
-/*top log in bar / nav bar styling*/
+/*++++++++++++++++++++++++++++++++++++++++++++top log in bar / nav bar styling*/
 nav {
     width: 100%;
     background-color: #7E6C54;
@@ -238,27 +198,10 @@ nav li fieldset, #register fieldset {
 img#nav{
     padding-left: 1.250em;
 }
-#login input.btn, header button{
-    background: #c87346; /* Old browsers */
-    background: -moz-linear-gradient(top,  #c87346 0%, #f4ba52 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c87346), color-stop(100%,#f4ba52)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    border-radius: 30px;
-    width: 200%;
-    height: 30px;
-    display: inline-block;
-    color: #000;
-    font-weight: bold;
-    border: none;
-}
-header button, #add{     /*Sign Out Button*/
+
+/*+++++++++++++++++++++++++++++++++++++++++++BUTTONS BUTTONS BUTTONS ++++++++++++++++++++++++++*/
+/*+++++++++++++++++++++++++++++++++++++++++ /*Sign Out Button   --  removed .modalClick*/
+header button{
     display: inline-block;
     width: 10%;
     height: 2em;
@@ -266,15 +209,82 @@ header button, #add{     /*Sign Out Button*/
     margin: 10px 10% 10px auto;
     border: none;
 }
-#dashboard {    /*Dashboard button*/
+/*++++++++++++++++++++++++++++++++++++++++++Dashboard button*/
+#dashboard {
     float: left;
     margin:10px 0 10px 10%;
 }
-a, body > header > a > button, #proForm > fieldset:nth-child(7) > input  {
-    text-decoration: none;
-    color: #7E6C54;
+.submit_btn, input.btn, header button {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    color: #000;
+    width: 150px;
+    height: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    background: #c87346; /* Old browsers */
+    background: -moz-linear-gradient(top,  #c87346 0%, #f4ba52 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c87346), color-stop(100%,#f4ba52)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
+    border: none;
+
+
+
+
 }
-/*begin generic body styling*/
+/*++++++++++++++++++++++++++++++++++++++++++++Form ++++++++++++++++++++++++++*/
+fieldset{
+    border: none;
+}
+#addForm {                    /*container for form*/
+    display: block;
+    margin: .5em auto 0 auto;
+    text-align: center;
+    background-color: #f3f4f5;
+    border: 2px inset #c87346;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
+    -moz-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
+    -o-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
+    -webkit-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
+}
+#addForm h1{
+    font-size: 2em;
+    text-align: center;
+}
+#addForm label {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    width: 18.750em;
+}
+#addForm input {
+    width: 31.250em;
+    line-height: 2em;
+    float: right;
+    font-weight: lighter;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+#addForm input.btn {
+    line-height: 1.625em;
+}
+#addForm fieldset {
+    display: block;
+    text-align: left;
+    border: 0;
+}
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin generic body styling*/
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     background-color: #acd9de;
@@ -296,24 +306,24 @@ h1, h2, p {
 }
 h1 {
     font-size: 1.500em;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.625em;
 }
 h2 {
     font-size: 1.250em;
-    font-weight: 500;
+    font-weight: 300;
     line-height: 0.938em;
 }
 p {
     font-size: 1em;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.250em;
 }
-/*begin upper half of content styling for welcome page*/
+/*++++++++++++++++++++++++++++++++++++++++STYLING FOR WELCOME INTRO, TRIAL AND Project Page */
 .COA {
     margin: 2.25em  auto .75em auto;
 }
-#intro, #trial, #projects {
+#intro, #trial, #pPage {
     max-width: 90%;
     margin: 0 auto;
     background-color: #f3f4f5;
@@ -351,6 +361,7 @@ p {
     margin: 0 auto;
     display: inline-block;
     vertical-align: top;
+    width: 35%;
 }
 #features h1{
     text-align: right;
@@ -362,31 +373,13 @@ p {
 #features h2 {
     margin: 1.255em auto 1.875em;
 }
-#features button {
-    display: inline-block;
-    color: #000;
-    width:55%;
-    height: 3.125em;
-    font-size:1.5em;
-    font-weight: bold;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    border-radius: 30px;
-    background: #c87346; /* Old browsers */
-    background: -moz-linear-gradient(top,  #c87346 0%, #f4ba52 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c87346), color-stop(100%,#f4ba52)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
-    border: none;   /*override user agent stylesheet*/
-    margin: 0 0 1.250em 200px;
+#features input.btn {
+    float: right;
 }
-/*End of Intro*/
 
-/*mid-section styling for welcome page*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++End of Intro*/
+
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++mid-section REVIEW styling for welcome page*/
 .reviews{
     background-color:#f3f4f5;
     display: flex;
@@ -421,9 +414,9 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
-/*End of Reviews/Comments*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++End of Reviews/Comments*/
 
-/*Beginning of bottom half for welcome page*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Beginning of bottom half for welcome page - trial & email registration*/
 #trial{
     margin-top: 1.625em;
     display: block;
@@ -465,31 +458,11 @@ blockquote p {
     display: inline-block;
     margin-right: 1.250em;
 }
-#wp1 .submit_btn{
-    display: inline-block;
-    color: #000;
-    width:43%;
-    height: 2.5em;
-    font-size:1em;
-    font-weight: bold;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    border-radius: 30px;
-    background: #c87346; /* Old browsers */
-    background: -moz-linear-gradient(top,  #c87346 0%, #f4ba52 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c87346), color-stop(100%,#f4ba52)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
-    border: none;
-}
 
-/*end of bottom half*/
 
-/*footer styling for welcome page*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++end of bottom half*/
+
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++footer styling*/
 footer{
     width: 100%;
     background-color: #7E6C54;
@@ -510,88 +483,11 @@ footer.short p {
     font-size: .5em;
 }
 
-/*Register.html specific styling*/
-#rRegister img{
-    float: left;
-    margin: 1.250em auto 0 1.250em;
-}
-#rRegister, #proForm {                    /*container for form*/
-    display: block;
-    margin: .5em auto 0 auto;
-    text-align: center;
-    background-color: #f3f4f5;
-    border: 2px inset #c87346;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    border-radius: 30px;
-    box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
-    -moz-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
-    -o-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
-    -webkit-box-shadow: .313em .313em .313em .313em rgba(0,0,0,0.4);
-}
-#rRegister, #proForm h1{
-    font-size: 2em;
-    text-align: center;
-}
-#rRegister, #proForm label {
-    width: 18.750em;
-    font-weight: bold;
-}
-#rRegister, #proForm input {
-    width: 31.250em;
-    line-height: 2em;
-    float: right;
-    font-weight: lighter;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-#rRegister, #proForm fieldset {
-    display: block;
-    text-align: left;
-    border: 0;
-}
-#rRegister input#passwordInput{
+input#passwordInput{
     width:31.250em;
 }
-/*terms and agreement checkbox*/
 
-#rRegister input[type = "checkbox"] {
-    margin-right: .325em;
-    display: inline-block;
-    width: 3em;
-    float: none;
-}
-#rRegister p.checkboxAgree{
-    float: right;
-    display: inline-block;
-    margin: 0 auto;
-    font-size: .75em;
-}
-#rRegister, #proForm input.btn{
-    color: #000;
-    width:21.5em;
-    height: 2em;
-    font-size:1em;
-    font-weight: bold;
-    line-height: 1em;
-    -webkit-border-radius: 30px;
-    -moz-border-radius: 30px;
-    -ms-border-radius: 30px;
-    -o-border-radius: 30px;
-    border-radius: 30px;
-    background: #c87346; /* Old browsers */
-    background: -moz-linear-gradient(top,  #c87346 0%, #f4ba52 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c87346), color-stop(100%,#f4ba52)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
-    margin: 1em auto;
-    display: block;
-    border: none;
-}
-/* asterisk for required */
+/* ++++++++++++++++++++++++++++++++++++++++asterisk for required */
 .red {
     color: red;
 }
@@ -599,16 +495,13 @@ footer.short p {
     content:" *";
     color: red;
 }
-/* end asterisk */
-
-/*Project Specific Styling */
-
-.project {
+/*++++++++++++++++++++++++++++++++++++++++ end asterisk */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++Project.html Specific Styling   class = project  ID = */
+.projectList {
     margin: 0 20px 20px 20px;
     padding: 0;
 }
-
-/*Project Listing*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++Project ACCORDION*/
 #accordion{
     margin: 100px 20px;
     padding:5px 15px;
@@ -636,89 +529,60 @@ footer.short p {
     padding:0 50px;
     text-align: left;
 }
-#projects > a > img{
+#pPage > a > img{
     display: inline;
     margin: 5px 0 auto 5%;
     float: left;
     overflow: hidden;
     width: 6%;
 }
-h1#add {
-    font-size: 1.5em;
-    text-align: right;
-    display: inline-block;
-    width: 50%;
-}
-
-fieldset#status{
-    margin: 0 50px 0 50px;
-}
-a.radio-picture {
-    border: 1px solid black;
-    display: inline-block;
-    margin-right: 10px;
-    text-decoration: none;
-    width: 80px;
-    height: 80px;
-    }
-
-a.radio-picture.highlighted{
-    border: 2px solid #C87346;
-}
-a#statusCompleted {
-    background: url("../images/new.png") no-repeat scroll 0 0 white;
-  }
-a#statusUrgent {
-    background: url("../images/urgent.png") no-repeat scroll 0 0 white;
-}
-a#statusNormal {
-    background: url("../images/normal.png") no-repeat scroll 0 0 white;
-}
-a#statusDelayed {
-      background: url("../images/delayed.png") no-repeat scroll 0 0 white;
-}
-.hidden {
-    left: -10000px;
-    position: absolute;
-    top: -1000px;
-}
 
 
-/* Media Queries*/
-/* Smartphones (portrait and landscape) ----------- */
-@media screen and (max-width: 700px){              /*make comments stack*/
-    .reviews {
-        -webkit-flex-direction: column;
-        flex-direction: column;
-    }
-    .comments {
-        width: 100%;
-    }
-    #trial{
-        display: none;
-    }
-    nav{
-        height: 10.625em;
-    }
-    #intro{
-        margin-top: 1.250em;
-    }
-    .COA{
-     margin-top: 9.375em;
-    }
-    nav ul{
-        clear: both;
-        width: 75%;
-    }
-    nav li{
-        text-align: right;
-        margin-right: 1.250em;
-    }
-    #login input.btn{
-        margin-left: .938em;
-        margin-bottom: 1.250em;
-        width: 225%;
-        border: none;
-    }
+fieldset.radiogroup  {
+
+    margin-bottom: 1.25em;
+    padding: .125em;
 }
+
+fieldset.radiogroup legend {
+
+    padding: 0;
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 100%;
+    color: black;
+}
+#addForm{
+    width: 100%;
+    height: auto;
+
+}
+#modal{
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    width: 100%;
+
+    max-width: 630px;
+    min-width: 320px;
+
+    margin-left:-150px;
+    margin-top: -100px;
+    display: none;
+
+
+}
+#overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    display: none;
+}
+
+
+
 

@@ -14,25 +14,61 @@
     <p>Welcome Jane to your Project Keeper</p>
 
     <!--Dashboard button -->
-    <button id = "dashboard"><a href="admin.html">Dashboard</a></button>
+    <button id = "dashboard">Dashboard</button>
 
     <!--Sign Out Button-->
-    <a href = "index.html"><button>Sign Out</button></a>
+    <button>Sign Out</button>
 </header>
 
 <!--Main content -->
 
 <div id = "container">
-    <div id = "manage">
+    <div id = "pPage">
         <a href = "index.html"><img src = "images/House_Logo.png" alt = "HomeSmart.com"></a>
-        <a href = "#"><h1 id = "pAdd" class = "modalClick"><span class="icon-plus"></span>Add Project</h1></a>
+       <h1 class = "modalClick"> <a href = "#"><span class="icon-plus"></span>Add Project</a></h1>
+        <div id = "overlay">
+            <div id = "modal">
 
+                <div id = "add">
+                    <form id = "addForm">
+                        <span class = "close">X</span>
+                        <h3 class = "header">Add Project</h3>
+                        <fieldset>
+                            <label for = "pname">What is the project name?</label>
+                            <input id = "pname" type = "text" title = "Please enter the project name." class = "hsTooltip" placeholder = "name of project">
+                        </fieldset>
+                        <fieldset>
+                            <label for = "pDesc">Project Description</label>
+                            <input id = "pDesc" type = "text" title = "Please describe the project." class = "hsTooltip" placeholder = "project description">
+                        </fieldset>
+                        <fieldset>
+                            <label for = "pDate">When is the project due?</label>
+                            <input id = "pDate" type = "text" title = "Please enter the project due date" class = "hsTooltip" placeholder = "project due date" required aria-required = "true">
+                        </fieldset>
+                        <fieldset class = "radiogroup">
+                            <br>
+                            <label class = "mystatus">
+                                <input type = "radio" name = "status" id = "urgent">
+                            </label>
+                            <label class = "mystatus">
+                                <input type = "radio" name = "status" id = "normal">
+                            </label>
+                            <label class = "mystatus">
+                                <input type = "radio" name = "status" id = "delayed">
+                            </label>
+                            <label class = "mystatus">
+                                <input type = "radio" name = "status" id = "complete">
+                            </label>
+                        </fieldset>
+                        <br>
+                        <button name = "addButton" id = "addButton">Add</button>
 
-        <!--Begin Add Project Modal -->
-
-
-
-        <div id="accordion">
+                    </form>
+                </div> <!--closes add div-->
+            </div> <!--closes modal -->
+        </div>  <!--closes overlay -->
+        <h1>Current Projects</h1>
+         <div id="accordion">
             <div class = "project">
                 <h2 class = "toggle">Project 1</h2>
                 <section>
@@ -74,6 +110,19 @@
                 <hr class = "gradient_one">
                 </div>
         </div>
+
+        <!--Closes out Current Projects Listings -->
+
+
+
+
+
+
+
+
+
+
+
     </div>
 </div>
 
