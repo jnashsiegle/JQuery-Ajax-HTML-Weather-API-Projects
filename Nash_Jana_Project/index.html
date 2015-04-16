@@ -75,15 +75,64 @@
 				</ul>
 			<h1>Join Now!  It'll change your life!</h1>
 
+			<!--Beginning of Modal for Registration -->
+			<div id = "overlay">
+				<div id = "modal">
 
+					<div id = "add">
+						<form id = "addForm">
+							<span class = "close">X</span>
+							<h2 class = "header">Registration</h2>
+							<fieldset>
+								<div class = "">
+									<label for = "fname">What is your first name?</label>
+									<input id = "fname" type = "text" title = "Please enter your first name." class = "hsTooltip" placeholder = "first name">
+								</div>
+							</fieldset>
 
+							<fieldset>
+								<div class = "">
+									<label for = "lname">What is your last name?</label>
+									<input id = "lname" type = "text" title = "Please enter your last name." class = "hsTooltip" placeholder = "last name">
+								</div>
+							</fieldset>
 
+							<fieldset>
+								<div class = "required">
+									<label for = "rUserName">What will your username be?</label>
+									<input id = "rUserName" type = "text" title = "Please enter your desired username." class = "hsTooltip" placeholder = "Username" required aria-required = "true">
+								</div>
+							</fieldset>
 
-<form>
-	<fieldset>
-		<input type="submit" value="Join Now!" class="btn">
-	</fieldset>
-	</form>
+							<fieldset>
+								<div class = "required">
+									<label for = "email">Your email address</label>
+									<input id = "email" name = "email" type = "email" title = "Please enter your email." class = "hsTooltip" placeholder = "user@mydomain.com" required aria-required = "true">
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<div class = "required">
+									<label for="rPasswordInput">Password: <input type="password" id="rPasswordInput" name="rPasswordInput" title = "Please enter your password." class = "hsTooltip" placeholder = "password" required aria-required = "true">
+									</label>
+								</div>
+							</fieldset>
+							<fieldset>
+								<div class = "required">
+									<label for="confirmPasswordInput">Confirm Password: <input type="password" id="confirmPasswordInput" name="confirmPasswordInput" title = "Please confirm your password." class = "hsTooltip" placeholder = "confirm password"  required aria-required = "true"></label>
+								</div>
+							</fieldset>
+
+							<fieldset>
+								<input type="submit" value="Submit" class="btn">
+							</fieldset>
+						</form>
+
+					</div> <!--closes add div-->
+				</div> <!--closes modal -->
+			</div>  <!--closes overlay -->
+		<button class = "modalClick">Join Now!</button>
+
 
 
 
@@ -102,6 +151,9 @@
 		<div class = "comments"><blockquote>Smart Home! Even my kids teachers noticed that they turn in their homework more consistently!...</blockquote></div>
 	</div>
 	<!--End of Reviews-->
+
+
+
 	<!--Beginning of Trial Registration offer-->
 <div id = "trial"> <!-- Register div -->
 	<div id = "wp">

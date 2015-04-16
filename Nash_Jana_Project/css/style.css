@@ -109,6 +109,7 @@ hr.gradient_one {       /*Horizontal Rule for in-between Projects */
     background-image: -moz-linear-gradient(left, #f4ba52, #c87346, #f4ba52);
     background-image: -ms-linear-gradient(left, #f4ba52, #c87346, #f4ba52);
     background-image: -o-linear-gradient(left, #f4ba52, #c87346, #f4ba52);
+    clear: both;
 }
 .tooltip {
     display:none;
@@ -215,7 +216,7 @@ header button{
     float: left;
     margin:10px 0 10px 10%;
 }
-.submit_btn, input.btn, header button, button {
+.submit_btn, button.modalClick, button, button, #login input.btn {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: normal;
     color: #000;
@@ -242,6 +243,13 @@ header button{
 
 }
 /*++++++++++++++++++++++++++++++++++++++++++++Form & all things Modal ++++++++++++++++++++++++++*/
+button.modalClick {
+    text-align: center;
+    font-size: inherit;
+    float: right;
+    width: 65%;
+}
+
 .modalClick  {
     font-size: 1.5em;
     text-align: right;
@@ -303,11 +311,12 @@ fieldset{
     line-height: 2em;
 }
 #addForm input {
-    width: 31.250em;
+    width: 20em;
     line-height: 2em;
     float: right;
     font-weight: lighter;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 }
 #addForm input.btn {
     line-height: 1.625em;
@@ -531,15 +540,13 @@ footer{
 }
 footer.short{
     position: fixed;
-    height: 1.75em;
     bottom: 0;
 }
-footer.short p {
-    font-size: .5em;
-}
+
 
 input#passwordInput{
-    width:31.250em;
+    width:15em;
+    display: initial;
 }
 /* ++++++++++++++++++++++++++++++++++++++++asterisk for required */
 .red {
@@ -592,6 +599,10 @@ input#passwordInput{
 }
 .projTitle{
     text-align: center;
+}
+.projbtn{
+    float: right;
+    margin:0 20px 20px 0;
 }
 
 
