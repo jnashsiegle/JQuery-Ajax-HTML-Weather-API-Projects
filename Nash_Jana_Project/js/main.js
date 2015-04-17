@@ -70,13 +70,27 @@
 
 
 
-    $('label.mystatus').mouseover(function() {
-        $(this).fadeTo('1000', .2, 'swing');
+    $('label.mystatus').mouseover(function () {
+        $(this).fadeTo('1000', 0.2, 'swing');
     });
-    $('label.mystatus').mouseout(function() {
+    $('label.mystatus').mouseout(function () {
         $(this).fadeTo('1000', 1, 'linear');
     });
 
+    //jQuery for tabs
+    $('#tabs p').hide().eq(0).show();
+    $('#tabs p:not(:first)').hide();
+
+    $('#tabs-nav li').click(function (e) {
+        e.preventDefault();
+        $('#tabs p').hide();
+
+        $('#tabs-nav .current').removeClass("current");
+        $(this).addClass('current');
+        var clicked = $(this).find('a:first').attr('href');
+
+        $('#tabs ' + clicked).fadeIn('fast');
+    }).eq(0).addClass('current');
 
 
 

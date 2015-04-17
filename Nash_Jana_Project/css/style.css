@@ -101,6 +101,12 @@ html {
 .icon-circle-down:before {
     content: "\ea43";
 }
+.icon-user:before {
+    content: "\e971";
+}
+.icon-paint-format:before {
+    content: "\e90c";
+}
 hr.gradient_one {       /*Horizontal Rule for in-between Projects */
     border: 0;
     height: 1px;
@@ -209,17 +215,17 @@ header button{
     height: 2em;
     float: right;
     margin: 10px 10% 10px auto;
-    border: none;
+    border: 1px solid #c87346;
 }
 /*++++++++++++++++++++++++++++++++++++++++++Dashboard button*/
 #dashboard {
     float: left;
     margin:10px 0 10px 10%;
 }
-.submit_btn, button.modalClick, button, button, #login input.btn {
+.submit_btn, button.modalClick, button, button, #login input.btn, #addForm input.btn {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: normal;
-    color: #000;
+    color: #c84d1d;
     width: 150px;
     height: 30px;
     display: inline-block;
@@ -236,7 +242,7 @@ header button{
     background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
-    border: none;
+    border: 1px solid #c87346;
 
 
 
@@ -310,7 +316,7 @@ fieldset{
     width: 18.750em;
     line-height: 2em;
 }
-#addForm input {
+#addForm input,input#rPasswordInput, input#confirmPasswordInput {
     width: 20em;
     line-height: 2em;
     float: right;
@@ -351,6 +357,78 @@ label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
 button#addButton {
     margin-bottom: 20px;
 }
+/*++++++++++++++++++++++++TABS STYLING / ADMIN PAGE+++++++++++++++++*/
+#admin{
+    height: 500px;
+}
+#admin h1, #admin h2{
+    margin-left: 180px;
+}
+#panel{
+    margin: 75px auto 0 auto;
+    width: 50%;
+}
+#tabs {
+    width: 600px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid #c87346;
+    color: #c87346;
+    padding-top:40px;
+    background: rgb(243,244,245); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(243,244,245,1) 1%, rgba(229,229,229,1) 52%, rgba(243,244,245,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(243,244,245,1)), color-stop(52%,rgba(229,229,229,1)), color-stop(100%,rgba(243,244,245,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(243,244,245,1) 1%,rgba(229,229,229,1) 52%,rgba(243,244,245,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(243,244,245,1) 1%,rgba(229,229,229,1) 52%,rgba(243,244,245,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(243,244,245,1) 1%,rgba(229,229,229,1) 52%,rgba(243,244,245,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(243,244,245,1) 1%,rgba(229,229,229,1) 52%,rgba(243,244,245,1) 100%); /* W3C */
+
+
+
+
+}
+#tabs-nav {
+    width: 600px;
+    height: 47px;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 1.5em;
+    margin-top:30px;
+    margin-bottom: 0;
+}
+#tabs-nav a {
+    text-decoration: none;
+    color: #c84d1d;
+    vertical-align: middle;
+}
+
+#tabs-nav span{
+    width: 400px;
+}
+#tabs-nav li{
+    display: inline;
+    padding: 10px 35px 10px 35px;
+   width: 100%;
+    border-radius: 30px 30px 0 0;
+    background: #c87346; /* Old browsers */
+    background: -moz-linear-gradient(top,  #c87346 0%, #f4ba52 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c87346), color-stop(100%,#f4ba52)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
+}
+#tabs-nav li.current{
+    background: rgb(244,186,82); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(244,186,82,1) 0%, rgba(200,115,70,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,186,82,1)), color-stop(100%,rgba(200,115,70,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(244,186,82,1) 0%,rgba(200,115,70,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(244,186,82,1) 0%,rgba(200,115,70,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(244,186,82,1) 0%,rgba(200,115,70,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(244,186,82,1) 0%,rgba(200,115,70,1) 100%); /* W3C */
+
+
+}
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin generic body styling*/
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -386,11 +464,16 @@ p {
     font-weight: 300;
     line-height: 1.250em;
 }
+
+button:focus {
+    outline: none;
+}
+
 /*++++++++++++++++++++++++++++++++++++++++STYLING FOR WELCOME INTRO, TRIAL AND Project Page */
 .COA {
     margin: 2.25em  auto .75em auto;
 }
-#intro, #trial, #pPage {
+#intro, #trial, #pPage, #admin {    /*styling for main backgrounds of section containers*/
     max-width: 90%;
     margin: 0 auto;
     background-color: #f3f4f5;
@@ -544,8 +627,7 @@ footer.short{
 }
 
 
-input#passwordInput{
-    width:15em;
+input#passwordInput, input#rPasswordInput, input#confirmPasswordInput{
     display: initial;
 }
 /* ++++++++++++++++++++++++++++++++++++++++asterisk for required */
@@ -590,7 +672,7 @@ input#passwordInput{
     padding:0 50px;
     text-align: left;
 }
-#pPage > a > img{
+#pPage > a > img, #admin img{
     display: inline;
     margin: 5px 0 auto 5%;
     float: left;
