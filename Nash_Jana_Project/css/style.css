@@ -243,10 +243,6 @@ header button{
     background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
     background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
     border: 1px solid #c87346;
-
-
-
-
 }
 /*++++++++++++++++++++++++++++++++++++++++++++Form & all things Modal ++++++++++++++++++++++++++*/
 button.modalClick {
@@ -255,7 +251,6 @@ button.modalClick {
     float: right;
     width: 65%;
 }
-
 .modalClick  {
     font-size: 1.5em;
     text-align: right;
@@ -371,10 +366,9 @@ button#addButton {
 #tabs {
     width: 600px;
     height: auto;
-    padding: 20px;
+    padding: 40px 20px 20px 20px;
     border: 1px solid #c87346;
     color: #c87346;
-    padding-top:40px;
     background: rgb(243,244,245); /* Old browsers */
     background: -moz-linear-gradient(top,  rgba(243,244,245,1) 1%, rgba(229,229,229,1) 52%, rgba(243,244,245,1) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(243,244,245,1)), color-stop(52%,rgba(229,229,229,1)), color-stop(100%,rgba(243,244,245,1))); /* Chrome,Safari4+ */
@@ -382,10 +376,6 @@ button#addButton {
     background: -o-linear-gradient(top,  rgba(243,244,245,1) 1%,rgba(229,229,229,1) 52%,rgba(243,244,245,1) 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  rgba(243,244,245,1) 1%,rgba(229,229,229,1) 52%,rgba(243,244,245,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom,  rgba(243,244,245,1) 1%,rgba(229,229,229,1) 52%,rgba(243,244,245,1) 100%); /* W3C */
-
-
-
-
 }
 #tabs-nav {
     width: 600px;
@@ -401,7 +391,6 @@ button#addButton {
     color: #c84d1d;
     vertical-align: middle;
 }
-
 #tabs-nav span{
     width: 400px;
 }
@@ -426,8 +415,6 @@ button#addButton {
     background: -o-linear-gradient(top,  rgba(244,186,82,1) 0%,rgba(200,115,70,1) 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top,  rgba(244,186,82,1) 0%,rgba(200,115,70,1) 100%); /* IE10+ */
     background: linear-gradient(to bottom,  rgba(244,186,82,1) 0%,rgba(200,115,70,1) 100%); /* W3C */
-
-
 }
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++begin generic body styling*/
 body {
@@ -464,11 +451,9 @@ p {
     font-weight: 300;
     line-height: 1.250em;
 }
-
 button:focus {
     outline: none;
 }
-
 /*++++++++++++++++++++++++++++++++++++++++STYLING FOR WELCOME INTRO, TRIAL AND Project Page */
 .COA {
     margin: 2.25em  auto .75em auto;
@@ -526,7 +511,6 @@ button:focus {
 #features input.btn {
     float: right;
 }
-
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++End of Intro*/
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++mid-section REVIEW styling for welcome page*/
@@ -572,7 +556,6 @@ blockquote p {
     display: block;
     overflow: hidden;
 }
-
 #wp{
     display: inline-block;
     margin: 1.875em auto 0 auto;
@@ -625,8 +608,6 @@ footer.short{
     position: fixed;
     bottom: 0;
 }
-
-
 input#passwordInput, input#rPasswordInput, input#confirmPasswordInput{
     display: initial;
 }

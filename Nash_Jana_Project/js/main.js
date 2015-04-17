@@ -50,19 +50,19 @@
         e.stopImmediatePropagation();       //stops other event handlers from being called
         e.preventDefault();                 //stops the default action from activating
         $('#overlay')                       //grabs the overlay
-            .fadeIn(1000)                       //fades it in slowly rather than all at once appearing
-            .find('#modal')
-            .fadeIn(2000);
+            .fadeIn(1000)                       //fades the overlay in slowly rather than all at once appearing
+            .find('#modal')                     //will find the actual modal now and..
+            .fadeIn(2000);                      //it will now fade in over 2 secs
 
     });
 
-    $('.close').click(function(e) {
-        e.stopImmediatePropagation();
-        e.preventDefault();
-        $('#overlay')
-            .fadeOut(2000)
-            .find('#modal')
-            .fadeOut(1000);
+    $('.close').click(function(e) {                 //activates on click of the "close" button 'X'
+        e.stopImmediatePropagation();                  //stops other event handlers from being called
+        e.preventDefault();                         //stops the default action from activating
+        $('#overlay')                               // grabs the overlay
+            .fadeOut(2000)                          //begins fading the overlay out over 2 secs
+            .find('#modal')                         //finds the modal
+            .fadeOut(1000);                         //and it fades out over 1 sec
 
     });
 
@@ -70,27 +70,27 @@
 
 
 
-    $('label.mystatus').mouseover(function () {
-        $(this).fadeTo('1000', 0.2, 'swing');
-    });
-    $('label.mystatus').mouseout(function () {
-        $(this).fadeTo('1000', 1, 'linear');
+    $('label.mystatus').mouseover(function () {         //when mouse moves over any label with "mystatus" class
+        $(this).fadeTo('1000', 0.2, 'swing');           //it's gong to fade out over 1sec to an opacity of .2 s
+    });                                                 //easing of swing is set, but not enough time for it to fully                                                           be seen
+    $('label.mystatus').mouseout(function () {          //when mouse moves off the label
+        $(this).fadeTo('1000', 1, 'linear');            //we will now fade back in over 1 sec with a linear easing
     });
 
     //jQuery for tabs
-    $('#tabs p').hide().eq(0).show();
-    $('#tabs p:not(:first)').hide();
+    $('#tabs p').hide().eq(0).show();                   //what is first visible tab
+    $('#tabs p:not(:first)').hide();                    // hide all the rest,
 
-    $('#tabs-nav li').click(function (e) {
-        e.preventDefault();
-        $('#tabs p').hide();
+    $('#tabs-nav li').click(function (e) {              //listener for click we will hide current tab
+        e.preventDefault();                             //stops the default action from activating
+        $('#tabs p').hide();                            //hide the current tab
 
-        $('#tabs-nav .current').removeClass("current");
-        $(this).addClass('current');
-        var clicked = $(this).find('a:first').attr('href');
+        $('#tabs-nav .current').removeClass("current"); //removing the class to
+        $(this).addClass('current');                    //replace active tab
+        var clicked = $(this).find('a:first').attr('href'); //find first href of current class
 
-        $('#tabs ' + clicked).fadeIn('fast');
-    }).eq(0).addClass('current');
+        $('#tabs ' + clicked).fadeIn('fast');           //tabs that are activated will fade in fast
+    }).eq(0).addClass('current');                       //their class is now current
 
 
 
