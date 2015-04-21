@@ -156,9 +156,9 @@ $(document).ready(function($) {
             success: function (parsed_json) {
                 var forecast = parsed_json['forecast']['txt_forecast']['forecastday'];
                 for (var index in forecast) {
-                    var forecastString = 'The weather forecast for ' + forecast[index]['title'] + ' is ' + forecast[index]['fcttext'].toLowerCase();
-                    var forecastParagraph = $('<p>').addClass('forecast').text(forecastString);
-                    $(".tenDay").append(forecastParagraph);
+                    var foreSt = 'The weather forecast for ' + forecast[index]['title'] + ' is ' + forecast[index]['fcttext'].toLowerCase();
+                    var forePara = $('<p>').addClass('forecast').text(foreSt);
+                    $(".tenDay").append(forePara);
 
                 }
             }
@@ -167,7 +167,7 @@ $(document).ready(function($) {
 
     <!--3.Embed the WU Hourly 1-day forecast feature.-->
 
-    
+
 
 
 
