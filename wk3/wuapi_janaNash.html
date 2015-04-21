@@ -114,7 +114,7 @@ $(document).ready(function($) {
             var temp_f = parsed_json['current_observation']['temp_f'];          //pulls the fahrenheit temperature
             var weather = parsed_json['current_observation']['weather'];        //pulls brief weather summary
             var precipTodayString = parsed_json['current_observation']['precip_today_string'];  //pulls the accumulated prec in inches for time period
-            var windStr = parsed_json['current_observation']['wind_string'];            //description of wind and strengtH
+            var windStr = parsed_json['current_observation']['wind_string'];            //description of wind and strength
                                                                         //END SETTING VARIABLES
                 $(".myLocation").html(city + ", " + state);             //sets city and state info in mylocation class of h1
                 $(".time").html(sampleTime);                            //sets time in h2 time class
@@ -149,53 +149,32 @@ $(document).ready(function($) {
     });
 <!--2.Embed the WU 10-day forecast summary feature.-->
 
-    $.ajax({
-        url: "http://api.wunderground.com/api/6a3b287f5ec5bbe6/forecast10day/q/TX/Canyon_Lake.json",
-        dataType: "jsonp",       //maps us to the data features  uses json to cross domain boundaries
-        success:  function(parsed_json) {            //upon success will call the json from the external domain
-            var forecast = parsed_json['forecast']['txt_forecast']['forecastday'];  //SETTING VARIABLES - sets variable to pull forecast info
-            var sForecast = parsed_json['forecast']['simpleforecast']['forecastday']; //sets variable to set simple forecast info for avehumidity
 
-            for (var i = 0; i < forecast.length; i++) {     //looping through all the data for the txt_forecast so we can pull targeted data
-                for (var j = 0; j < forecast.length; j++) { //looping through all the data for the simpleforecast so we can pull targeted data
+        $.ajax({
+            url: "http://api.wunderground.com/api/6a3b287f5ec5bbe6/forecast10day/q/TX/Canyon_Lake.json",
+            dataType: "jsonp",
+            success: function (parsed_json) {
+                var forecast = parsed_json['forecast']['txt_forecast']['forecastday'];
+                for (var index in forecast) {
+                    var forecastString = 'The weather forecast for ' + forecast[index]['title'] + ' is ' + forecast[index]['fcttext'].toLowerCase();
+                    var forecastParagraph = $('<p>').addClass('forecast').text(forecastString);
+                    $(".tenDay").append(forecastParagraph);
 
-                    $(".tenDay").html('The weather forecast for ' + forecast[1]['title'] + ' is ' + forecast[1]['fcttext'].toLowerCase() + "  There will be an average humidity of " +  sForecast[1]['avehumidity'] + "&#37;" + " for this 24-hour time period."+ "<br /><br />" +
-                            'The weather forecast for ' + forecast[2]["title"] + ' is ' + forecast[2]['fcttext'].toLowerCase() + "  There will be an average humidity of " +  sForecast[2]['avehumidity'] + "&#37;" + " for this 24-hour time period." +  "<br /><br />" +
-                            'The weather forecast for ' + forecast[3]["title"] + ' is ' + forecast[3]['fcttext'].toLowerCase() + "<br /><br />" +
-                            'The weather forecast for ' + forecast[4]["title"] + ' is ' + forecast[4]['fcttext'].toLowerCase() + "  There will be an average humidity of " +  sForecast[3]['avehumidity'] + "&#37;" + " for this 24-hour time period." + "<br /><br />" +
-                            'The weather forecast for ' + forecast[5]["title"] + ' is ' + forecast[5]['fcttext'].toLowerCase() + "<br /><br />" +
-                            'The weather forecast for ' + forecast[6]['title'] + ' is ' + forecast[6]['fcttext'].toLowerCase() + "  There will be an average humidity of " +  sForecast[4]['avehumidity'] + "&#37;" + " for this 24-hour time period."+ "<br /><br />" +
-                            'The weather forecast for ' + forecast[7]["title"] + ' is ' + forecast[7]['fcttext'].toLowerCase() +  "<br /><br />" +
-                            'The weather forecast for ' + forecast[8]["title"] + ' is ' + forecast[8]['fcttext'].toLowerCase() + "  There will be an average humidity of " +  sForecast[5]['avehumidity'] + "&#37;" + " for this 24-hour time period." + "<br /><br />" +
-                            'The weather forecast for ' + forecast[9]["title"] + ' is ' + forecast[9]['fcttext'].toLowerCase() +  "<br /><br />" +
-                            'The weather forecast for ' + forecast[10]["title"] + ' is ' + forecast[10]['fcttext'].toLowerCase() + "  There will be an average humidity of " +  sForecast[6]['avehumidity'] + "&#37;" + " for this 24-hour time period." + "<br /><br />"
-                            +
-                            'The weather forecast for ' + forecast[11]["title"] + ' is ' + forecast[11]['fcttext'].toLowerCase() + "<br /><br />" +
-                            'The weather forecast for ' + forecast[12]["title"] + ' is ' + forecast[12]['fcttext'].toLowerCase() + "  There will be an average humidity of " +  sForecast[7]['avehumidity'] + "&#37;" + " for this 24-hour time period." + "<br /><br />" +
-                            'The weather forecast for ' + forecast[13]["title"] + ' is ' + forecast[13]['fcttext'].toLowerCase() + "<br /><br />" +
-                            'The weather forecast for ' + forecast[14]['title'] + ' is ' + forecast[14]['fcttext'].toLowerCase() + "  There will be an average humidity of " +  sForecast[8]['avehumidity'] + "&#37;" + " for this 24-hour time period."+ "<br /><br />" +
-                            'The weather forecast for ' + forecast[15]["title"] + ' is ' + forecast[15]['fcttext'].toLowerCase() +  "<br /><br />" +
-                            'The weather forecast for ' + forecast[16]["title"] + ' is ' + forecast[16]['fcttext'].toLowerCase() + "  There will be an average humidity of " +  sForecast[9]['avehumidity'] + "&#37;" + " for this 24-hour time period." + "<br /><br />" +
-                            'The weather forecast for ' + forecast[17]["title"] + ' is ' + forecast[17]['fcttext'].toLowerCase() +  "<br /><br />" +
-                            'The weather forecast for ' + forecast[18]["title"] + ' is ' + forecast[18]['fcttext'].toLowerCase() +  "  There will be an average humidity of " +  /*sForecast[10]['avehumidity'] + "&#37;" + " for this 24-hour time period."*/ "<br /><br />" +
-                            'The weather forecast for ' + forecast[19]["title"] + ' is ' + forecast[19]['fcttext'].toLowerCase() +  "<br /><br />"
-                            //IMPORTANT NOTE: ON sForecast[10] I have that part commented out but left the code, as it was breaking due to an undefined error, but it is the same code so I am thinking it is something server side.  I left the code to show it is correct.  E
-                            // Each concatenated line above pulls the data needed to display a summary utilizing the two for loops I made.  The main summary came from the var = forecast which is of the txt_forecast key.  I used the responses title for the day, fcttext for the main summary and set it to lower case to try and get a more smooth, if rough format.  I also made a nested for statement so I could pull the average humidity for each 24-hour period as humidity is very relevant for this area.  the var=sForecast pulls sets that data and is looped through by the inner loop and fills the sForecast[]['avehumidity'] key.
-                    );
                 }
             }
-        }
-    });
-<!--3.Embed the WU Hourly 1-day forecast feature.-->	
+        });
+
+
+    <!--3.Embed the WU Hourly 1-day forecast feature.-->
+
+    
 
 
 
+<!--4.Embed the WU Astronomy feature.-->
 
-<!--4.Embed the WU Astronomy feature.-->	
-<!--Your Code Here-->
-	
 
-<!--5.Embed the WU Almanac for today feature.-->	
+    <!--5.Embed the WU Almanac for today feature.-->
 <!--Your Code Here-->
 
 }); //closes whole script
