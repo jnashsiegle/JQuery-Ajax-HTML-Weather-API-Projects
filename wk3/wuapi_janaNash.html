@@ -44,10 +44,13 @@ p {
     display: block;
     text-align: center;
 }
-    .forecast {
-        text-align: left;
-        line-height: 1.5;
+.forecast {
+    text-align: left;
+    line-height: 1.5;
     }
+div.forecast {                  /*shift hourly more inline with heading*/
+    margin-left: 150px;
+}
 </style>
 
 
@@ -78,7 +81,7 @@ p {
 
 <div class="right">
 <h2>Your Hourly 1-day forecast</h2>
-<p class="hourFore">
+<p class="hourFore forecast hourly">
 <!--3. Display the Hourly 1-day forecast feature here-->
 </p>
 
@@ -154,10 +157,10 @@ $(document).ready(function($) {
             url: "http://api.wunderground.com/api/6a3b287f5ec5bbe6/forecast10day/q/TX/Canyon_Lake.json",
             dataType: "jsonp",
             success: function (parsed_json) {
-                var forecast = parsed_json['forecast']['txt_forecast']['forecastday'];
-                for (var index in forecast) {
-                    var foreSt = 'The weather forecast for ' + forecast[index]['title'] + ' is ' + forecast[index]['fcttext'].toLowerCase();
-                    var forePara = $('<p>').addClass('forecast').text(foreSt);
+                var forecast = parsed_json['forecast']['txt_forecast']['forecastday'];      //setting forecast variable
+                for (var index in forecast === 24) {                                               //running through the index of data of the variable
+                    var foreSt = 'The weather forecast for ' + forecast[index]['title'] + ' is ' + forecast[index]['fcttext'].toLowerCase();                                                                                                                    //string set
+                    var forePara = $('<p>').addClass('forecast').text(foreSt);                  //setting para variable, adding class for format, for text output which we will attach to the tenDay class below.  if I'dve used any linebreaks I would have needed to transpose into html
                     $(".tenDay").append(forePara);
 
                 }
@@ -167,11 +170,32 @@ $(document).ready(function($) {
 
     <!--3.Embed the WU Hourly 1-day forecast feature.-->
 
+    $.ajax({
+        url: "http://api.wunderground.com/api/6a3b287f5ec5bbe6/hourly/q/TX/Canyon_Lake.json",
+        dataType: "jsonp",
+        success: function (parsed_json) {
+            //console.log("hello and we are in");                 //checking to see if we connected
+            var forecast = parsed_json['hourly_forecast'];      //setting forecast as the variable for hourly_forecast
+            for (var index in forecast) {               //running through the hourly forecast index array
+               // console.log(forecast);                  //checking to see if we are pulling data
+                var foreSt = 'Time and Date:  '  + forecast[index]['FCTTIME']['pretty'] +"<br/>" +    //txt string for data output of hourly                                                                                                                conditions
+                "Current:  "+ forecast[index]['temp']["english"] + "ºF. "  + "Feels like " + forecast[index]['feelslike']['english'] + "ºF. "+ forecast[index]['condition'] + "<br>" +
+                "Winds:  "  + forecast[index]['wspd']['english'] +" m.p.h." + " from the " + forecast[index]['wdir']["dir"] + "<br />" +
+                "Humidity:  "  + forecast[index]['humidity'] + "&#37;";
+
+                foreSt = $("<div />").html(foreSt).addClass('forecast');  //add var string to a fake div so we can transform txt to html and and
+                                                                           //adding class of forecast for formatting
+                foreSt  = $('<p>').html(foreSt);       //writing it to the p as proper html
+                $(".hourFore").append(foreSt);          //inserting it into the .hourFore p class
+
+            }
+        }
+    });
 
 
 
 
-<!--4.Embed the WU Astronomy feature.-->
+    <!--4.Embed the WU Astronomy feature.-->
 
 
     <!--5.Embed the WU Almanac for today feature.-->
