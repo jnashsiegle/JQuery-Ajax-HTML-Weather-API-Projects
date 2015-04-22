@@ -611,6 +611,9 @@ footer.short{
 input#pass, input#rPasswordInput, input#confirm{
     display: initial;
 }
+input{
+    color: black;
+}
 /* ++++++++++++++++++++++++++++++++++++++++asterisk for required */
 .red {
     color: red;
