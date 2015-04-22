@@ -41,19 +41,19 @@
 			<ul>
 			<li><fieldset>
 				<div class = "required">
-					<label for = "userName">Log In</label>
-					<input id = "userName" type = "text" title = "Please enter your username." class = "hsTooltip" placeholder = "Username" required aria-required = "true">
+					<label for = "user">Log In</label>
+					<input id = "user" type = "text" title = "Please enter your username." class = "hsTooltip" placeholder = "Username" required aria-required = "true">
 				</div>
 			</fieldset></li>
 
 			<li> <fieldset>
 				<div class = "required">
-					<label for="passwordInput">Password: <input type="password" id="passwordInput" name="passwordInput" title = "Please enter your password." class = "hsTooltip" placeholder = "password" required aria-required = "true"></label>
+					<label for="pass">Password: <input type="password" id="pass" name="passwordInput" title = "Please enter your password." class = "hsTooltip" placeholder = "password" required aria-required = "true"></label>
 				</div>
 			</fieldset></li>
 
 			<li>
-				<input type="submit" value="Log In" class="btn"></li>
+				<button name = "signinButton" id = "signinButton">Log In</button></li>
 			</ul>
 		</form>
 	<img id = "nav" src = "images/House_Logo.png" title = "HomeSmart Logo" alt = "logo">
@@ -130,7 +130,7 @@
 					</div> <!--closes add div-->
 				</div> <!--closes modal -->
 			</div>  <!--closes overlay -->
-		<button class = "modalClick">Join Now!</button>
+		<button name = joinBtn class = "modalClick">Join Now!</button>
 		</div>
 	</div>
 	<!--end of Registration-->
@@ -183,7 +183,7 @@
 			<fieldset>
 				<div class= "submit">
 					<p>
-						<input class="submit_btn" name="submit" type="submit" value="Sign Up" onclick="submit();" />
+						<button name = "signUp">Sign Up</button>
 					</p>
 				</div>
 			</fieldset>

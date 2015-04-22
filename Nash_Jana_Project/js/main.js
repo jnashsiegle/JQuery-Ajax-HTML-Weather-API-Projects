@@ -11,7 +11,7 @@
 
     //JQuery for Tooltips site wide
 
-// Tooltip only Text
+    // Tooltip only Text
     $('.hsTooltip').hover(function () {
         // Hover over code
         var title = $(this).attr('title');         //using title attribute as our variable
@@ -32,9 +32,9 @@
         });
 
 
-//JQuery for Project Page Accordion and h2 color toggle on active
+    //JQuery for Project Page Accordion and h2 color toggle on active
 
-    $('div.project h2').click(function(e){     //we do not want any h2's actively open on load
+    $('div.project h2').click(function (e) {     //we do not want any h2's actively open on load
         e.stopImmediatePropagation();           //so let's stop any default browser acts
         e.preventDefault();
         var div = $(this).next('section');    //this creates a div out of the current p element
@@ -44,9 +44,9 @@
         div.slideDown();                        //it will open on a slide down
     });
 
-//JQuery for Modal
+    //JQuery for Modal
 
-    $('.modalClick').click(function(e) {   //activates on click function to open modal
+    $('.modalClick').click(function (e) {   //activates on click function to open modal
         e.stopImmediatePropagation();       //stops other event handlers from being called
         e.preventDefault();                 //stops the default action from activating
         $('#overlay')                       //grabs the overlay
@@ -56,7 +56,7 @@
 
     });
 
-    $('.close').click(function(e) {                 //activates on click of the "close" button 'X'
+    $('.close').click(function (e) {                 //activates on click of the "close" button 'X'
         e.stopImmediatePropagation();                  //stops other event handlers from being called
         e.preventDefault();                         //stops the default action from activating
         $('#overlay')                               // grabs the overlay
@@ -66,13 +66,12 @@
 
     });
 
-//jQuery for mouseover
-
+    //jQuery for mouseover
 
 
     $('label.mystatus').mouseover(function () {         //when mouse moves over any label with "mystatus" class
         $(this).fadeTo('1000', 0.2, 'swing');           //it's gong to fade out over 1sec to an opacity of .2 s
-    });                                                 //easing of swing is set, but not enough time for it to fully                                                           be seen
+    });                                                 //easing of swing is set, but not enough time for it to fully                                                                                                       be seen
     $('label.mystatus').mouseout(function () {          //when mouse moves off the label
         $(this).fadeTo('1000', 1, 'linear');            //we will now fade back in over 1 sec with a linear easing
     });
@@ -94,10 +93,33 @@
 
 
 
+    //Log In
+
+$('#signinButton').click(function () {
+    console.log("are we in?");
+    var user = $('#user').val(); //declaring var of user
+    var pass = $('#pass').val();
+    console.log("This notifies you if the password is working");
+    $.ajax({
+        url: 'xhr/login.php',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            username: user,
+            password: pass
+        },
+        success: function (response) {
+            console.log("test user");
+            if (response.error) {
+                alert(response.error);
+            } else {
+                window.location.assign('admin.html')
+            }
+        }
 
 
-
-
+    });
+});
 
 
 
