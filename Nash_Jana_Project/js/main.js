@@ -121,6 +121,37 @@ $('#signinButton').click(function () {
     });
 });
 
+    //Log Out
+    $('#logOut').click(function(e){
+        e.preventDefault;               //stop action of button until we tell it to go to xhr file
+        $.get('xhr/logout.php', function () {     //get the logout.php process
+            window.location.assign('index.html')    //send back to index.html
+        })
+    });
+
+    //Go to projects page
+
+    $('.projectsbtn').click(function(e){
+        e.preventDefault();             //stops click action until it is called
+        window.location.assign('projects.html')
+    });
+
+    //Go to Dashboard
+
+    $('#dashBtn').click(function(e){
+        e.preventDefault();
+        window.location.assign('admin.html')
+    });
+
+    //Go to myAccount
+
+    $('#myAccount').click(function(e){
+        e.preventDefault();
+        window.location.assign('account.html')
+    });
+
+
+
 
 
 
