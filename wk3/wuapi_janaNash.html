@@ -175,13 +175,14 @@ $(document).ready(function($) {
             //console.log("hello and we are in");                 //checking to see if we connected
             var forecast = parsed_json['hourly_forecast']; //setting forecast as the variable for hourly_forecast
 
-            for (index in forecast) {                   //for loop to pull data from following array into var
+            for (index = 0; index <24; index++) {                   //for loop to pull data from following array into var
                 if (forecast.hasOwnProperty(index)) { //running through the hourly forecast index array
-                    // console.log(forecast);                  //checking to see if we are pulling data
+                     console.log(forecast);                  //checking to see if we are pulling data
                     var foreSt = 'Time and Date:  ' + forecast[index]['FCTTIME']['pretty'] + "<br/>" + //txt string for data output of hourly                                                                                                                conditions
                             "Current:  " + forecast[index]['temp']["english"] + "ºF. " + "Feels like " + forecast[index]['feelslike']['english'] + "ºF. " + forecast[index]['condition'] + "<br>" +
                             "Winds:  " + forecast[index]['wspd']['english'] + " m.p.h." + " from the " + forecast[index]['wdir']["dir"] + "<br />" +
                             "Humidity:  " + forecast[index]['humidity'] + "&#37;";
+
 
                     foreSt = $("<div />").html(foreSt).addClass('forecast'); //add var string to a fake div so we can transform txt to html and and
                     //adding class of forecast for formatting
@@ -219,14 +220,14 @@ $(document).ready(function($) {
         success: function (parsed_json) {     //upon success will call the json from the external domain
             console.log("hello");            //checking to see if we connected
             var alma = parsed_json ['almanac'];    //setting var for almanac
-            console.log(alma);                      //outputting astronomy array into console for viewing verifying connectivity
+            //console.log(alma);                      //outputting astronomy array into console for viewing verifying connectivity
             var almaStr = "Local Airport:  "  + alma["airport_code"] + '<br />' +
                             "Average High Temperature:  " + alma['temp_high']['normal']['F'] + "ºF." + "<br />" +
                             "Record High Temperature:  " + alma['temp_high']['record']['F'] + "ºF." + "<br />" +
-                            "Record Year High Temperature:  " + alma['temp_high']['recordyear'] + "<br />" +
+                            "Record High Temperature Year:  " + alma['temp_high']['recordyear'] + "<br />" +
                             "Average Low Temperature:  " + alma['temp_low']['normal']['F'] + "ºF." + "<br />" +
                             "Record Low Temperature:  " + alma["temp_low"]['record']['F'] + "ºF." + "<br />" +
-                            "Record Year Low Temperature:  " + alma['temp_low']['recordyear'] + "<br /> ";
+                            "Record Low Temperature Year:  " + alma['temp_low']['recordyear'] + "<br /> ";
             almaStr = $("<div />").html(almaStr).addClass('forecast'); //putting txt into fake div and converting to html
             almaStr = $("<p>").html(almaStr); //inputting data into p html
             $(".almanac").append(almaStr); //adding into the html code
