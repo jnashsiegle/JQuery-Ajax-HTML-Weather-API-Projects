@@ -96,23 +96,23 @@
     //Log In
 
 $('#signinButton').click(function () {
-    console.log("are we in?");
-    var user = $('#user').val(); //declaring var of user
-    var pass = $('#pass').val();
-    console.log("This notifies you if the password is working");
+    console.log("are we locked and loaded?");              //checking to see if script loads
+    var user = $('#user').val();            //declaring var of user called to id of user
+    var pass = $('#pass').val();            //password var called to id of pass
+    console.log("This should tell you if the pass is working.");
     $.ajax({
-        url: 'xhr/login.php',
-        type: 'post',
-        dataType: 'json',
-        data: {
-            username: user,
-            password: pass
+        url: 'xhr/login.php',           //connects us to the login.php
+        type: 'post',                   //we will be posting data
+        dataType: 'json',               //using json
+        data: {                             //specifying the data we will be using
+            username: user,                 //username called to user
+            password: pass                  //password called to pass
         },
-        success: function (response) {
-            console.log("test user");
-            if (response.error) {
+        success: function (response) {      //on a response from user we will console log "test user"
+            console.log("Success!!");
+            if (response.error) {           //if response errs we'll do an alert
                 alert(response.error);
-            } else {
+            } else {                        //else if no error we will go to the admin.html
                 window.location.assign('admin.html')
             }
         }
