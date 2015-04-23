@@ -173,9 +173,12 @@ header {
     margin: 0 auto;
     overflow: hidden;
 }
-header p {
+.userid {
    text-align: center;
     display: inline-block;
+    vertical-align: middle;
+    margin: 10px 10% 10px auto;
+    font-size: 1.25em;
 }
 /*++++++++++++++++++++++++++++++++++++++++++++top log in bar / nav bar styling*/
 nav {
@@ -608,7 +611,7 @@ footer.short{
     position: fixed;
     bottom: 0;
 }
-input#pass, input#rPasswordInput, input#confirm{
+input#pass, input#password, input#pass-confirm{
     display: initial;
 }
 input{
@@ -628,6 +631,7 @@ input{
     margin: 0 20px 20px 20px;
     padding: 0;
 }
+
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++Project ACCORDION*/
 #accordion{
     margin: 50px 20px;

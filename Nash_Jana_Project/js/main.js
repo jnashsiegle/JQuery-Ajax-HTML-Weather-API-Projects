@@ -150,6 +150,46 @@ $('#signinButton').click(function () {
         window.location.assign('account.html')
     });
 
+    //Display username
+
+    $.getJSON("xhr/check_login.php", function(data){  //pull the login.php and making a function named data
+        console.log(data);              //everytime it's called it will pull up the data first_name
+        $.each(data, function(key, val){
+            console.log(val.first_name);        //spits out the first_name into the console
+            $(".userid").html("Welcome " + val.first_name + " to your Project Keeper")
+        })
+    });
+
+    //Register
+
+    $('#register').click(function(){
+        var firstname = $('#first-name').val(),  //set vars from data keys (id's)
+            lastname = $('#last-name').val(),    //set vars from data keys (id's)
+            username = $('#user-name').val(),    //set vars from data keys (id's)
+            email = $('#email').val(),           //set vars from data keys (id's)
+            password = $('#password').val();     //set vars from data keys (id's)
+        console.log(firstname + " " + lastname + " " + username + " " + email + " " + password); //confirm data in console
+
+        $.ajax({
+            url:'xhr/register.php',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                firstname: firstname,
+                lastname: lastname,
+                username: username,
+                email: email,
+                password: password
+            },
+            success: function(response){
+                if (response.error) {
+                    alert(response.error);
+                }else{
+                    window.location.assign('admin.html');
+                }
+            }
+        });
+    })
 
 
 

@@ -85,22 +85,22 @@
 							<h2 class = "header">Registration</h2>
 							<fieldset>
 								<div class = "">
-									<label for = "fname">What is your first name?</label>
-									<input id = "fname" type = "text" title = "Please enter your first name." class = "hsTooltip" placeholder = "first name">
+									<label for = "first-name">What is your first name?</label>
+									<input id = "first-name" type = "text" name = "first-name" title = "Please enter your first name." class = "hsTooltip" placeholder = "first name">
 								</div>
 							</fieldset>
 
 							<fieldset>
 								<div class = "">
-									<label for = "lname">What is your last name?</label>
-									<input id = "lname" type = "text" title = "Please enter your last name." class = "hsTooltip" placeholder = "last name">
+									<label for = "last-name">What is your last name?</label>
+									<input id = "last-name" name = "last-name" type = "text" title = "Please enter your last name." class = "hsTooltip" placeholder = "last name">
 								</div>
 							</fieldset>
 
 							<fieldset>
 								<div class = "required">
-									<label for = "rUserName">What will your username be?</label>
-									<input id = "rUserName" type = "text" title = "Please enter your desired username." class = "hsTooltip" placeholder = "Username" required aria-required = "true">
+									<label for = "user-name">What will your username be?</label>
+									<input id = "user-name" name = "user-name" type = "text" title = "Please enter your desired username." class = "hsTooltip" placeholder = "username" required aria-required = "true">
 								</div>
 							</fieldset>
 
@@ -113,17 +113,17 @@
 
 							<fieldset>
 								<div class = "required">
-									<label for="rPasswordInput">Password: <input type="password" id="rPasswordInput" name="rPasswordInput" title = "Please enter your password." class = "hsTooltip" placeholder = "password" required aria-required = "true">
+									<label for="password">Password: <input type="password" name = "password" id="password" name="password" title = "Please enter your password." class = "hsTooltip" placeholder = "password" required aria-required = "true">
 									</label>
 								</div>
 							</fieldset>
 							<fieldset>
 								<div class = "required">
-									<label for="confirmPasswordInput">Confirm Password: <input type="password" id="confirmPasswordInput" name="confirmPasswordInput" title = "Please confirm your password." class = "hsTooltip" placeholder = "confirm password"  required aria-required = "true"></label>
+									<label for="pass-confirm">Confirm Password: <input type="password" id="pass-confirm" name="pass-confirm" title = "Please confirm your password." class = "hsTooltip" placeholder = "confirm password"  required aria-required = "true"></label>
 								</div>
 							</fieldset>
 							<fieldset>
-								<input type="submit" value="Submit" class="btn">
+								<input type="button" id = "register" value="Submit" class="btn">
 							</fieldset>
 						</form>
 
@@ -154,7 +154,7 @@
 		</div>
 	<div id="wp1">
 		<h2>Sign up NOW for a free 30-day trial.</h2>
-		<form id = "register" method = "post">
+		<form id = "trRegister" method = "post">
 			<fieldset>
 				<div class = "required">
 					<label for = "rFname">What is your first name?</label>
