@@ -34,15 +34,15 @@
 
     //JQuery for Project Page Accordion and h2 color toggle on active
 
-    $('div.project h2').click(function (e) {     //we do not want any h2's actively open on load
+   /* $('div.projects').click(function (e) {     //we do not want any h2's actively open on load
         e.stopImmediatePropagation();           //so let's stop any default browser acts
         e.preventDefault();
-        var div = $(this).next('section');    //this creates a div out of the current p element
+        var div = $(this).next('.projectid');    //this creates a div out of the current p element
         $(this).toggleClass('active');    //keeps the active h2 background changed to active css
-        $('div.project section').slideUp();              //calls the p to animate with a slide up to close...
+        $('div.projects').slideUp();              //calls the p to animate with a slide up to close...
         if (div.is(":visible")) return;         //if it is visible else...
         div.slideDown();                        //it will open on a slide down
-    });
+    });   */
 
     //JQuery for Modal
 
@@ -189,10 +189,103 @@ $('#signinButton').click(function () {
                 }
             }
         });
-    })
+    });
+
+    // New Project
+
+    $('#addButton').click(function() {
+        var projName = $('#pName').val(),
+            projDesc = $('#pDesc').val(),
+            projDue = $('#pDate').val(),
+            status = $('input[name = "status"]:checked').prop("id"),
+            PID = $('.projectid').val();
+        console.log(projName + " " +  projDesc + " " + projDue + " " + status);
+
+        $.ajax({
+            url: "xhr/new_project.php",
+            type: 'post',
+            dataType: 'json',
+            data: {
+                projectName: projName,
+                projectDescription: projDesc,
+                dueDate: projDue,
+                status: status,
+                projectID:PID
+            },
+            success: function (response) {
+                console.log('Testing for success Gooooo me!');
+                if (response.error) {
+                    alert(response.error);
+                } else {
+                    window.location.assign('projects.html')
+                };
+            }
+        });
+    });
 
 
+//Get Projects
 
+    var projects = function(){
+        $.ajax({
+            url: 'xhr/get_projects.php',
+            type: 'get',
+            dataType: 'json',
+            success: function(response){
+                if(response.error){
+                    console.log(response.error);
+                }else{
+
+                    for(var i=0, j=response.projects.length; i < j; i++){
+                        var result = response.projects[i];
+
+                        console.log(result);    //lists out all projects and data fields with values
+
+                        $(".projects").append(
+                            '<div style = "border: 1px solid black">' +
+                            "<input class = 'projectid' type = 'hidden' value + '" + result.id + "'>" +
+                            " Project Name: " + result.projectName + "<br>" +
+                            " Project Description: " + result.projectDescription + "<br>" +
+                            " Project Status: " + result.status + "<br>" +
+                            "Project Due Date: " + result.dueDate + "<br>" +
+                                "Project ID: " + result.id + "<br>"
+                            + '<button class = "deletebtn">Delete</button>'
+                            + '<button class = "editbtn">Edit</button>'
+                            + '</div> <br>'
+                        );
+                        console.log("This is " + result.id);
+                    }
+                    $('.deletebtn').click(function(e){
+                        $(".projectid").remove();
+                       /* var parent = $(this).result.id();*/
+                        /*$(this).closest(result.id).remove();*/
+                        console.log('test delete' + "this is the result.id:  " + result.id + "and this is the parent " + parent);
+                        $.ajax({
+                            url: 'xhr/delete_project.php',
+                            data: {
+                                projectID: result.id
+                            },
+                            type: 'POST',
+                            dataType: 'json',
+
+                            success: function(response){
+
+                                console.log('Testing for superior success!' + parent);
+
+                                if(response.error){
+                                    alert(response.error);
+                                }else{
+                                    console.log(result.id);
+                                    window.location.assign("projects.html");
+                                };
+                            }
+                        });
+                    });  //End Delete
+                }
+            }
+        })
+    };
+    projects();
 
 
 

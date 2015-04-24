@@ -38,16 +38,16 @@
                         <span class = "close">X</span>
                         <h2 class = "header">Add Project</h2>
                         <fieldset>
-                            <label for = "pname">What is the project name?</label>
-                            <input id = "pname" type = "text" title = "Please enter the project name." class = "hsTooltip" placeholder = "name of project">
+                            <label for = "pName">What is the project name?</label>
+                            <input id = "pName" name = "pName" type = "text" title = "Please enter the project name." class = "hsTooltip" placeholder = "name of project">
                         </fieldset>
                         <fieldset>
                             <label for = "pDesc">Project Description</label>
-                            <input id = "pDesc" type = "text" title = "Please describe the project." class = "hsTooltip" placeholder = "project description">
+                            <input id = "pDesc" type = "text" name = "pDesc" title = "Please describe the project." class = "hsTooltip" placeholder = "project description">
                         </fieldset>
                         <fieldset>
                             <label for = "pDate">When is the project due?</label>
-                            <input id = "pDate" type = "text" title = "Please enter the project due date" class = "hsTooltip" placeholder = "project due date" required aria-required = "true">
+                            <input id = "pDate" type = "text" name = "pDate" title = "Please enter the project due date" class = "hsTooltip" placeholder = "project due date">
                         </fieldset>
                         <fieldset class = "radiogroup">
                             <legend>What is the status of the project:</legend>
@@ -66,7 +66,7 @@
                             </label>
                         </fieldset>
                         <br>
-                        <button name = "addButton" id = "addButton">Add</button>
+                        <button name = "addButton" type = "button" id = "addButton" value = "Add" >Add</button>
 
                     </form>
                 </div> <!--closes add div-->
@@ -74,8 +74,8 @@
         </div>  <!--closes overlay -->
         <h1 class = "projTitle">Current Projects</h1>
          <div id="accordion">
-            <div class = "project">
-                <h2 class = "toggle">Project 1</h2>
+            <div class = "toggle projects">
+                <!--<h2 class = "toggle">Project 1</h2>
                 <section>
                     <p>Project Name&#58;</p>
                     <p>Project Description&#58;</p>
@@ -118,7 +118,7 @@
                 </section>
                 <hr class = "gradient_one">
                 </div>
-        </div>
+        </div>-->
         <!--Closes out Current Projects Listings -->
     </div>
 </div>
