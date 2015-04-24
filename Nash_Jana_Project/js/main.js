@@ -32,7 +32,7 @@
         });
 
 
-    //JQuery for Project Page Accordion and h2 color toggle on active
+    //JQuery for Project Page Accordion and h2 color toggle on active  (try to reactivate for wk 4 - ran out of time wk3
 
    /* $('div.projects').click(function (e) {     //we do not want any h2's actively open on load
         e.stopImmediatePropagation();           //so let's stop any default browser acts
@@ -122,70 +122,70 @@ $('#signinButton').click(function () {
 });
 
     //Log Out
-    $('#logOut').click(function(e){
-        e.preventDefault;               //stop action of button until we tell it to go to xhr file
-        $.get('xhr/logout.php', function () {     //get the logout.php process
-            window.location.assign('index.html')    //send back to index.html
-        })
+    $('#logOut').click(function (e) {
+        e.preventDefault(); //stop action of button until we tell it to go to xhr file
+        $.get('xhr/logout.php', function () { //get the logout.php process
+            window.location.assign('index.html'); //send back to index.html
+        });
     });
 
     //Go to projects page
 
-    $('.projectsbtn').click(function(e){
-        e.preventDefault();             //stops click action until it is called
-        window.location.assign('projects.html')
+    $('.projectsbtn').click(function (e) {
+        e.preventDefault(); //stops click action until it is called
+        window.location.assign('projects.html'); //redirects to projects.html page upon completion
     });
 
     //Go to Dashboard
 
-    $('#dashBtn').click(function(e){
-        e.preventDefault();
-        window.location.assign('admin.html')
+    $('#dashBtn').click(function (e) {
+        e.preventDefault(); //stops click action until it is called
+        window.location.assign('admin.html'); //redirects to admin.html page upon completion
     });
 
     //Go to myAccount
 
-    $('#myAccount').click(function(e){
-        e.preventDefault();
-        window.location.assign('account.html')
+    $('#myAccount').click(function (e) {
+        e.preventDefault(); //stops click action until it is called
+        window.location.assign('account.html'); //redirects to accounts.html page upon completion - page hopefully set up for wk.  ran out of time
     });
 
     //Display username
 
-    $.getJSON("xhr/check_login.php", function(data){  //pull the login.php and making a function named data
-        console.log(data);              //everytime it's called it will pull up the data first_name
-        $.each(data, function(key, val){
-            console.log(val.first_name);        //spits out the first_name into the console
-            $(".userid").html("Welcome " + val.first_name + " to your Project Keeper")
-        })
+    $.getJSON("xhr/check_login.php", function (data) { //pull the login.php and making a function named data
+        console.log(data); //everytime it's called it will pull up the data first_name
+        $.each(data, function (key, val) {
+            console.log(val.first_name); //spits out the first_name into the console
+            $(".userid").html("Welcome " + val.first_name + " to your Project Keeper");
+        });
     });
 
     //Register
 
-    $('#register').click(function(){
-        var firstname = $('#first-name').val(),  //set vars from data keys (id's)
-            lastname = $('#last-name').val(),    //set vars from data keys (id's)
-            username = $('#user-name').val(),    //set vars from data keys (id's)
-            email = $('#email').val(),           //set vars from data keys (id's)
-            password = $('#password').val();     //set vars from data keys (id's)
+    $('#register').click(function () {
+        var firstname = $('#first-name').val(), //set vars from data keys (id's)
+            lastname = $('#last-name').val(), //set vars from data keys (id's)
+            username = $('#user-name').val(), //set vars from data keys (id's)
+            email = $('#email').val(), //set vars from data keys (id's)
+            password = $('#password').val(); //set vars from data keys (id's)
         console.log(firstname + " " + lastname + " " + username + " " + email + " " + password); //confirm data in console
 
         $.ajax({
-            url:'xhr/register.php',
-            type: 'post',
-            dataType: 'json',
+            url: 'xhr/register.php', //url to php file
+            type: 'post', //using post method
+            dataType: 'json', //json data type
             data: {
-                firstname: firstname,
-                lastname: lastname,
-                username: username,
-                email: email,
-                password: password
+                firstname: firstname, //calls for fields
+                lastname: lastname, //calls for fields
+                username: username, //calls for fields
+                email: email, //calls for fields
+                password: password //calls for fields
             },
-            success: function(response){
-                if (response.error) {
-                    alert(response.error);
-                }else{
-                    window.location.assign('admin.html');
+            success: function (response) { //calls for the success function response
+                if (response.error) { //if an error do:
+                    alert(response.error); //an alert error message
+                } else {
+                    window.location.assign('admin.html'); //redirect to admin.html
                 }
             }
         });
@@ -193,32 +193,32 @@ $('#signinButton').click(function () {
 
     // New Project
 
-    $('#addButton').click(function() {
-        var projName = $('#pName').val(),
-            projDesc = $('#pDesc').val(),
-            projDue = $('#pDate').val(),
-            status = $('input[name = "status"]:checked').prop("id"),
-            PID = $('.projectid').val();
-        console.log(projName + " " +  projDesc + " " + projDue + " " + status);
+    $('#addButton').click(function () { //calls an add button function/modal
+        var projName = $('#pName').val(), //set vars from css ids
+            projDesc = $('#pDesc').val(), //set vars from css ids
+            projDue = $('#pDate').val(), //set vars from css ids
+            status = $('input[name = "status"]:checked').prop("id"), //set vars from css ids
+            PID = $('.projectid').val(); ////set vars from css ids - used during experimentation with delete
+        console.log(projName + " " + projDesc + " " + projDue + " " + status); //console out info
 
         $.ajax({
-            url: "xhr/new_project.php",
-            type: 'post',
-            dataType: 'json',
+            url: "xhr/new_project.php", //url to new_project.php file
+            type: 'post', //posting data
+            dataType: 'json', //using json
             data: {
-                projectName: projName,
-                projectDescription: projDesc,
-                dueDate: projDue,
-                status: status,
-                projectID:PID
+                projectName: projName, //calls database names into vars above
+                projectDescription: projDesc, //calls database names into vars above
+                dueDate: projDue, //calls database names into vars above
+                status: status //calls database names into vars above
+
             },
-            success: function (response) {
-                console.log('Testing for success Gooooo me!');
-                if (response.error) {
-                    alert(response.error);
+            success: function (response) { //success funtion
+                console.log('Testing for success Gooooo me!'); //consoling for are we in function
+                if (response.error) { //if an error respond by
+                    alert(response.error); //popping an alert box with message
                 } else {
-                    window.location.assign('projects.html')
-                };
+                    window.location.assign('projects.html'); //else go back to projects page
+                }
             }
         });
     });
@@ -226,64 +226,71 @@ $('#signinButton').click(function () {
 
 //Get Projects
 
-    var projects = function(){
+    var projects = function () {
+
         $.ajax({
-            url: 'xhr/get_projects.php',
-            type: 'get',
-            dataType: 'json',
-            success: function(response){
-                if(response.error){
-                    console.log(response.error);
-                }else{
+            url: 'xhr/get_projects.php', //calling dynamically for the projects info from db
+            type: 'get', //using GET method
+            dataType: 'json', //type json
+            success: function (response) { //if success go on to for loop
+                if (response.error) { //if error
+                    console.log(response.error); //respond with a console.log error message
+                } else { //with success we will.....
 
-                    for(var i=0, j=response.projects.length; i < j; i++){
-                        var result = response.projects[i];
+                    for (var i = 0, j = response.projects.length; i < j; i++) { //loop through the object array
+                        var result = response.projects[i]; //gathering info into result
 
-                        console.log(result);    //lists out all projects and data fields with values
+                        console.log(result); //lists out all projects and data fields with values (result variable)
 
-                        $(".projects").append(
+                        $(".projects").append( //we are going to insert this information into the .projects class div
                             '<div style = "border: 1px solid black">' +
-                            "<input class = 'projectid' type = 'hidden' value + '" + result.id + "'>" +
+                            "<input class = 'projectid' type = 'hidden' value = '" + result.id + "'  > " +
                             " Project Name: " + result.projectName + "<br>" +
                             " Project Description: " + result.projectDescription + "<br>" +
                             " Project Status: " + result.status + "<br>" +
                             "Project Due Date: " + result.dueDate + "<br>" +
-                                "Project ID: " + result.id + "<br>"
-                            + '<button class = "deletebtn">Delete</button>'
-                            + '<button class = "editbtn">Edit</button>'
-                            + '</div> <br>'
+                            "Project ID: " + result.id + "<br>" +
+                            '<button class = "deletebtn" >Delete</button>' +
+                            '<button class = "editbtn">Edit</button>' + '</div> <br>' //this is one long concatanation of how the information will be displayed within the html including the css and field vars of information from the db
                         );
-                        console.log("This is " + result.id);
+                        console.log("This is " + result.id); //logs out what the result.id is at moment used when trying to figuree out how to assign id to delete button so correct record is deleted.
+
                     }
-                    $('.deletebtn').click(function(e){
-                        $(".projectid").remove();
-                       /* var parent = $(this).result.id();*/
+                    $(".deletebtn").on('click', function () { //calls a function on the delete button to delete a record
+                        var PID = $(this)("projectid").val(); //these are all expressions trying to figure out how to get right record deleted, from here..
+                        $(this).PID.remove();
+                        /*$(this).closest(projects(projectID)).remove();*/
+                        /* $(this).closest(".projects").remove(result.id);*/
+                        /*UNTIL HERE */
+                        console.log("after the delete button function PID is : " + PID); //console trying to troubleshoot delete button
+                        /* $(".projectid").remove();*/
+                        /* var parent = $(this).result.id();*/
                         /*$(this).closest(result.id).remove();*/
-                        console.log('test delete' + "this is the result.id:  " + result.id + "and this is the parent " + parent);
+                        console.log('test delete' + "this is the result.id:  " + result.id); //more console trying to work out when delete finishes what is the result.id
                         $.ajax({
-                            url: 'xhr/delete_project.php',
+                            url: 'xhr/delete_project.php', //calling the delete_project file
                             data: {
-                                projectID: result.id
+                                projectID: result.id //data being used (and derned if I can figure out how to utilize it
                             },
-                            type: 'POST',
-                            dataType: 'json',
+                            type: 'POST', //using POST method
+                            dataType: 'json', //json
 
-                            success: function(response){
+                            success: function (response) { //upon success of deletion of any record ANY being keyword here
 
-                                console.log('Testing for superior success!' + parent);
+                                console.log('Testing for superior success!' + parent); //this message displays in console
 
-                                if(response.error){
+                                if (response.error) { //if it errors pop the alert message
                                     alert(response.error);
-                                }else{
-                                    console.log(result.id);
-                                    window.location.assign("projects.html");
-                                };
+                                } else {
+                                    console.log(result.id); //still following the id info for troubleshooting
+                                    window.location.assign("projects.html"); //redirect upon successful completion to projects.html
+                                }
                             }
                         });
-                    });  //End Delete
+                    }); //End Delete
                 }
             }
-        })
+        });
     };
     projects();
 
