@@ -632,47 +632,11 @@ input{
     padding: 0;
 }
 
-/*++++++++++++++++++++++++++++++++++++++++++++++++++++++Project ACCORDION*/
-#accordion{
+
+#projectlist{
     margin: 50px 20px;
     padding:5px 15px;
     cursor:pointer;
-}
-.project h2{
-    padding: 20px;
-    margin-top: 0;
-}
-.project h2:hover,
-.project h2:active,
-.active{
-    background: #c87346; /* Old browsers */
-    background: -moz-linear-gradient(top,  #c87346 0%, #f4ba52 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c87346), color-stop(100%,#f4ba52)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
-    color: white;
-}
-.project section {
-    display:none;
-    margin:0.5em 0;
-    padding:0 50px;
-    text-align: left;
-}
-#pPage > a > img, #admin img{
-    display: inline;
-    margin: 5px 0 auto 5%;
-    float: left;
-    overflow: hidden;
-    width: 6%;
-}
-.projTitle{
-    text-align: center;
-}
-.projbtn{
-    float: right;
-    margin:0 20px 20px 0;
 }
 
 
