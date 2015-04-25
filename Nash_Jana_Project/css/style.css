@@ -461,7 +461,7 @@ button:focus {
 .COA {
     margin: 2.25em  auto .75em auto;
 }
-#intro, #trial, #pPage, #admin {    /*styling for main backgrounds of section containers*/
+#intro, #trial, #pPage, #admin, #account {    /*styling for main backgrounds of section containers*/
     max-width: 90%;
     margin: 0 auto;
     background-color: #f3f4f5;

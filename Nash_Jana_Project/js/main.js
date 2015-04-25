@@ -34,7 +34,7 @@
 
     //JQuery for Project Page Accordion and h2 color toggle on active  (try to reactivate for wk 4 - ran out of time wk3
 
-   /* $('div.projects').click(function (e) {     //we do not want any h2's actively open on load
+   /*$('div.projects').click(function (e) {     //we do not want any h2's actively open on load
         e.stopImmediatePropagation();           //so let's stop any default browser acts
         e.preventDefault();
         var div = $(this).next('.projectid');    //this creates a div out of the current p element
@@ -42,7 +42,7 @@
         $('div.projects').slideUp();              //calls the p to animate with a slide up to close...
         if (div.is(":visible")) return;         //if it is visible else...
         div.slideDown();                        //it will open on a slide down
-    });   */
+    });*/
 
     //JQuery for Modal
 
@@ -257,20 +257,23 @@ $('#signinButton').click(function () {
 
                     }
                     $(".deletebtn").on('click', function () { //calls a function on the delete button to delete a record
-                        var PID = $(this)("projectid").val(); //these are all expressions trying to figure out how to get right record deleted, from here..
-                        $(this).PID.remove();
+
+                        var PID = $(this).parent().find(".projectid").val();  //finds the value of the project id, saves the value in PID and deletes
+                       /* $(this).remove(PID); */
+                       /* var PID = $(this)("projectid").val(); //these are all expressions trying to figure out how to get right record deleted, from here..*/
+                       /* $(this).PID.remove();*/
                         /*$(this).closest(projects(projectID)).remove();*/
                         /* $(this).closest(".projects").remove(result.id);*/
                         /*UNTIL HERE */
                         console.log("after the delete button function PID is : " + PID); //console trying to troubleshoot delete button
-                        /* $(".projectid").remove();*/
+                        /* $(".projectid").remove();  --------  More attempts here and below*/
                         /* var parent = $(this).result.id();*/
                         /*$(this).closest(result.id).remove();*/
                         console.log('test delete' + "this is the result.id:  " + result.id); //more console trying to work out when delete finishes what is the result.id
                         $.ajax({
                             url: 'xhr/delete_project.php', //calling the delete_project file
                             data: {
-                                projectID: result.id //data being used (and derned if I can figure out how to utilize it
+                                projectID: PID //YES!!!!!! This is what I was missing..got it.....all's deleting!!!!!!!this ties projectID to PID
                             },
                             type: 'POST', //using POST method
                             dataType: 'json', //json
@@ -291,10 +294,10 @@ $('#signinButton').click(function () {
                 }
             }
         });
+
     };
+
     projects();
-
-
 
 
 
