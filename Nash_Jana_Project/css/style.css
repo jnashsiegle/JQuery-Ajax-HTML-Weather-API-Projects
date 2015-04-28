@@ -23,6 +23,13 @@ html {
     clear: both;
 }
 
+/* Sortable CSS */
+
+.sortable { list-style-type: none; margin: 0; padding: 0; width: 98%; }
+.sortable li { margin: 0 5px 5px 5px; padding: 5px; font-size: 1.2em; height: 1.5em; }
+
+
+
 /*+++++++++++++++++++++++++++++++++Icons ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @font-face {
     font-family: 'icomoon';
@@ -355,6 +362,7 @@ label > input:checked + img{ /* (CHECKED) IMAGE STYLES */
 button#addButton {
     margin-bottom: 20px;
 }
+
 /*++++++++++++++++++++++++TABS STYLING / ADMIN PAGE+++++++++++++++++*/
 #admin{
     height: 500px;
@@ -631,12 +639,17 @@ input{
     margin: 0 20px 20px 20px;
     padding: 0;
 }
-
-
 #projectlist{
     margin: 50px 20px;
     padding:5px 15px;
     cursor:pointer;
+}
+
+.ui-sortable-placeholder {
+    border: 3px dashed #aaa;
+    height: 158px;
+    width: 1160.5px;
+    background: #ccc;
 }
 
 

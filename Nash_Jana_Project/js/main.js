@@ -34,15 +34,15 @@
 
     //JQuery for Project Page Accordion and h2 color toggle on active  (try to reactivate for wk 4 - ran out of time wk3
 
-   /*$('div.projects').click(function (e) {     //we do not want any h2's actively open on load
-        e.stopImmediatePropagation();           //so let's stop any default browser acts
-        e.preventDefault();
-        var div = $(this).next('.projectid');    //this creates a div out of the current p element
-        $(this).toggleClass('active');    //keeps the active h2 background changed to active css
-        $('div.projects').slideUp();              //calls the p to animate with a slide up to close...
-        if (div.is(":visible")) return;         //if it is visible else...
-        div.slideDown();                        //it will open on a slide down
-    });*/
+    /*$('div.projects').click(function (e) {     //we do not want any h2's actively open on load
+     e.stopImmediatePropagation();           //so let's stop any default browser acts
+     e.preventDefault();
+     var div = $(this).next('.projectid');    //this creates a div out of the current p element
+     $(this).toggleClass('active');    //keeps the active h2 background changed to active css
+     $('div.projects').slideUp();              //calls the p to animate with a slide up to close...
+     if (div.is(":visible")) return;         //if it is visible else...
+     div.slideDown();                        //it will open on a slide down
+     });*/
 
     //JQuery for Modal
 
@@ -92,34 +92,33 @@
     }).eq(0).addClass('current');                       //their class is now current
 
 
-
     //Log In
 
-$('#signinButton').click(function () {
-    console.log("are we locked and loaded?");              //checking to see if script loads
-    var user = $('#user').val();            //declaring var of user called to id of user
-    var pass = $('#pass').val();            //password var called to id of pass
-    console.log("This should tell you if the pass is working.");
-    $.ajax({
-        url: 'xhr/login.php',           //connects us to the login.php
-        type: 'post',                   //we will be posting data
-        dataType: 'json',               //using json
-        data: {                             //specifying the data we will be using
-            username: user,                 //username called to user
-            password: pass                  //password called to pass
-        },
-        success: function (response) {      //on a response from user we will console log "test user"
-            console.log("Success!!");
-            if (response.error) {           //if response errs we'll do an alert
-                alert(response.error);
-            } else {                        //else if no error we will go to the admin.html
-                window.location.assign('admin.html')
+    $('#signinButton').click(function () {
+        console.log("are we locked and loaded?");              //checking to see if script loads
+        var user = $('#user').val();            //declaring var of user called to id of user
+        var pass = $('#pass').val();            //password var called to id of pass
+        console.log("This should tell you if the pass is working.");
+        $.ajax({
+            url: 'xhr/login.php',           //connects us to the login.php
+            type: 'post',                   //we will be posting data
+            dataType: 'json',               //using json
+            data: {                             //specifying the data we will be using
+                username: user,                 //username called to user
+                password: pass                  //password called to pass
+            },
+            success: function (response) {      //on a response from user we will console log "test user"
+                console.log("Success!!");
+                if (response.error) {           //if response errs we'll do an alert
+                    alert(response.error);
+                } else {                        //else if no error we will go to the admin.html
+                    window.location.assign('admin.html');
+                }
             }
-        }
 
 
+        });
     });
-});
 
     //Log Out
     $('#logOut').click(function (e) {
@@ -243,15 +242,16 @@ $('#signinButton').click(function () {
                         console.log(result); //lists out all projects and data fields with values (result variable)
 
                         $(".projects").append( //we are going to insert this information into the .projects class div
-                            '<div style = "border: 1px solid black">' +
-                            "<input class = 'projectid' type = 'hidden' value = '" + result.id + "'  > " +
+                           // '<div style = "border: 1px solid black">' +
+                            '<div id = "sortable" class = "ui-state-default">' +
+                            "<input class = 'projectid' type = 'hidden' value = '" + result.id + "'  > " + "<br>" +
                             " Project Name: " + result.projectName + "<br>" +
                             " Project Description: " + result.projectDescription + "<br>" +
                             " Project Status: " + result.status + "<br>" +
                             "Project Due Date: " + result.dueDate + "<br>" +
-                            "Project ID: " + result.id + "<br>" +
+                            "Project ID: " + result.id + "<br><br>" +
                             '<button class = "deletebtn" >Delete</button>' +
-                            '<button class = "editbtn">Edit</button>' + '</div> <br>' //this is one long concatanation of how the information will be displayed within the html including the css and field vars of information from the db
+                            '<button class = "editbtn">Edit</button>' + '<br></div>' //this is one long concatanation of how the information will be displayed within the html including the css and field vars of information from the db
                         );
                         console.log("This is " + result.id); //logs out what the result.id is at moment used when trying to figuree out how to assign id to delete button so correct record is deleted.
 
@@ -259,9 +259,9 @@ $('#signinButton').click(function () {
                     $(".deletebtn").on('click', function () { //calls a function on the delete button to delete a record
 
                         var PID = $(this).parent().find(".projectid").val();  //finds the value of the project id, saves the value in PID and deletes
-                       /* $(this).remove(PID); */
-                       /* var PID = $(this)("projectid").val(); //these are all expressions trying to figure out how to get right record deleted, from here..*/
-                       /* $(this).PID.remove();*/
+                        /* $(this).remove(PID); */
+                        /* var PID = $(this)("projectid").val(); //these are all expressions trying to figure out how to get right record deleted, from here..*/
+                        /* $(this).PID.remove();*/
                         /*$(this).closest(projects(projectID)).remove();*/
                         /* $(this).closest(".projects").remove(result.id);*/
                         /*UNTIL HERE */
@@ -298,6 +298,30 @@ $('#signinButton').click(function () {
     };
 
     projects();
+
+    //DatePicker
+
+
+
+    $(function() {
+        $( ".datepicker" ).datepicker();
+        $( "#anim" ).change(function() {
+            $( "#datepicker" ).datepicker( "option", "showAnim","slow", $( this ).val("clip") );
+        });
+
+    });
+
+    //
+
+    //sortable
+    $(function() {
+        $( ".sortable" ).sortable({
+            placeholder: "ui-sortable-placeholder"
+        });
+    });
+
+
+
 
 
 
