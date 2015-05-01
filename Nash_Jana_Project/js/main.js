@@ -344,8 +344,8 @@
                 },
                 values: [                               //locations of our markers
                     {
-                        address: "3300 University Boulevard., Winter Park FL 32792",
-                        data: "We are here at Full Sail University"
+                        address: "3300 University Boulevard., Winter Park FL 32792",  //sets the address
+                        data: "We are here at Full Sail University"             //loads the dialog box text
                     },
                     {
                         address: "4000 North Goldenrod Road, Winter Park, FL 32792",

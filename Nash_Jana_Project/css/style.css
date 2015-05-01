@@ -246,12 +246,12 @@ header button{
     -o-border-radius: 30px;
     border-radius: 30px;
     background: #c87346; /* Old browsers */
-    background: -moz-linear-gradient(top,  #c87346 0%, #f4ba52 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c87346), color-stop(100%,#f4ba52)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #c87346 0%,#f4ba52 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #c87346 0%,#f4ba52 100%); /* W3C */
+    background: -moz-linear-gradient(top,  #f4ba52 0%, #c87346 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4ba52), color-stop(100%,#c87346)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #f4ba52 0%,#c87346 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #f4ba52 0%,#c87346 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #f4ba52 0%,#c87346 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #f4ba52 0%,#c87346 100%); /* W3C */
     border: 1px solid #c87346;
 }
 /*++++++++++++++++++++++++++++++++++++++++++++Form & all things Modal ++++++++++++++++++++++++++*/
