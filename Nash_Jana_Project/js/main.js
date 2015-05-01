@@ -1,34 +1,28 @@
-/*  
-	HomeSmart.com
-	PWA-2
-	Author: Jana Nash-Siegle
-*/
-
-
-
-
-(function($) {
+(function ($) {
 
     //JQuery for Tooltips site wide
 
     // Tooltip only Text
     $('.hsTooltip').hover(function () {
         // Hover over code
-        var title = $(this).attr('title');         //using title attribute as our variable
-        $(this).data('tipText', title).removeAttr('title');  //remove default tooltip, store data for later
-        $('<p class="tooltip"></p>')    //create paragraph element with class of tooltip
-            .text(title)       //set the tooltip contents
-            .appendTo('body')     //add to page
-            .fadeIn('slow');     //let's animate
+        var title = $(this).attr('title'); //using title attribute as our variable
+        $(this).data('tipText', title).removeAttr('title'); //remove default tooltip, store data for later
+        $('<p class="tooltip"></p>') //create paragraph element with class of tooltip
+            .text(title) //set the tooltip contents
+            .appendTo('body') //add to page
+            .fadeIn('slow'); //let's animate
     }, function () {
         // Hover out code
-        $(this).attr('title', $(this).data('tipText'));   //restore title attr
-        $('.tooltip').remove();             //remove tooltip
+        $(this).attr('title', $(this).data('tipText')); //restore title attr
+        $('.tooltip').remove(); //remove tooltip
     })
         .mousemove(function (e) {
-            var mousex = e.pageX + 20;       //gets us the X coordinates
-            var mousey = e.pageY + 10;       //gets us the Y coordinates
-            $('.tooltip').css({top: mousey, left: mousex});   //so we can follow the mouse around
+            var mousex = e.pageX + 20; //gets us the X coordinates
+            var mousey = e.pageY + 10; //gets us the Y coordinates
+            $('.tooltip').css({
+                top: mousey,
+                left: mousex
+            }); //so we can follow the mouse around
         });
 
 
@@ -46,72 +40,72 @@
 
     //JQuery for Modal
 
-    $('.modalClick').click(function (e) {   //activates on click function to open modal
-        e.stopImmediatePropagation();       //stops other event handlers from being called
-        e.preventDefault();                 //stops the default action from activating
-        $('#overlay')                       //grabs the overlay
-            .fadeIn(1000)                       //fades the overlay in slowly rather than all at once appearing
-            .find('#modal')                     //will find the actual modal now and..
-            .fadeIn(2000);                      //it will now fade in over 2 secs
+    $('.modalClick').click(function (e) { //activates on click function to open modal
+        e.stopImmediatePropagation(); //stops other event handlers from being called
+        e.preventDefault(); //stops the default action from activating
+        $('#overlay') //grabs the overlay
+            .fadeIn(1000) //fades the overlay in slowly rather than all at once appearing
+            .find('#modal') //will find the actual modal now and..
+            .fadeIn(2000); //it will now fade in over 2 secs
 
     });
 
-    $('.close').click(function (e) {                 //activates on click of the "close" button 'X'
-        e.stopImmediatePropagation();                  //stops other event handlers from being called
-        e.preventDefault();                         //stops the default action from activating
-        $('#overlay')                               // grabs the overlay
-            .fadeOut(2000)                          //begins fading the overlay out over 2 secs
-            .find('#modal')                         //finds the modal
-            .fadeOut(1000);                         //and it fades out over 1 sec
+    $('.close').click(function (e) { //activates on click of the "close" button 'X'
+        e.stopImmediatePropagation(); //stops other event handlers from being called
+        e.preventDefault(); //stops the default action from activating
+        $('#overlay') // grabs the overlay
+            .fadeOut(2000) //begins fading the overlay out over 2 secs
+            .find('#modal') //finds the modal
+            .fadeOut(1000); //and it fades out over 1 sec
 
     });
 
     //jQuery for mouseover
 
 
-    $('label.mystatus').mouseover(function () {         //when mouse moves over any label with "mystatus" class
-        $(this).fadeTo('1000', 0.2, 'swing');           //it's gong to fade out over 1sec to an opacity of .2 s
-    });                                                 //easing of swing is set, but not enough time for it to fully                                                                                                       be seen
-    $('label.mystatus').mouseout(function () {          //when mouse moves off the label
-        $(this).fadeTo('1000', 1, 'linear');            //we will now fade back in over 1 sec with a linear easing
+    $('label.mystatus').mouseover(function () { //when mouse moves over any label with "mystatus" class
+        $(this).fadeTo('1000', 0.2, 'swing'); //it's gong to fade out over 1sec to an opacity of .2 s
+    }); //easing of swing is set, but not enough time for it to fully                                                                                                       be seen
+    $('label.mystatus').mouseout(function () { //when mouse moves off the label
+        $(this).fadeTo('1000', 1, 'linear'); //we will now fade back in over 1 sec with a linear easing
     });
 
     //jQuery for tabs
-    $('#tabs p').hide().eq(0).show();                   //what is first visible tab
-    $('#tabs p:not(:first)').hide();                    // hide all the rest,
+    $('#tabs p').hide().eq(0).show(); //what is first visible tab
+    $('#tabs p:not(:first)').hide(); // hide all the rest,
 
-    $('#tabs-nav li').click(function (e) {              //listener for click we will hide current tab
-        e.preventDefault();                             //stops the default action from activating
-        $('#tabs p').hide();                            //hide the current tab
+    $('#tabs-nav li').click(function (e) { //listener for click we will hide current tab
+        e.preventDefault(); //stops the default action from activating
+        $('#tabs p').hide(); //hide the current tab
 
         $('#tabs-nav .current').removeClass("current"); //removing the class to
-        $(this).addClass('current');                    //replace active tab
+        $(this).addClass('current'); //replace active tab
         var clicked = $(this).find('a:first').attr('href'); //find first href of current class
 
-        $('#tabs ' + clicked).fadeIn('fast');           //tabs that are activated will fade in fast
-    }).eq(0).addClass('current');                       //their class is now current
+        $('#tabs ' + clicked).fadeIn('fast'); //tabs that are activated will fade in fast
+    }).eq(0).addClass('current'); //their class is now current
 
 
     //Log In
 
     $('#signinButton').click(function () {
-        console.log("are we locked and loaded?");              //checking to see if script loads
-        var user = $('#user').val();            //declaring var of user called to id of user
-        var pass = $('#pass').val();            //password var called to id of pass
+        console.log("are we locked and loaded?"); //checking to see if script loads
+        var user = $('#user').val(); //declaring var of user called to id of user
+        var pass = $('#pass').val(); //password var called to id of pass
         console.log("This should tell you if the pass is working.");
         $.ajax({
-            url: 'xhr/login.php',           //connects us to the login.php
-            type: 'post',                   //we will be posting data
-            dataType: 'json',               //using json
-            data: {                             //specifying the data we will be using
-                username: user,                 //username called to user
-                password: pass                  //password called to pass
+            url: 'xhr/login.php', //connects us to the login.php
+            type: 'post', //we will be posting data
+            dataType: 'json', //using json
+            data: { //specifying the data we will be using
+                username: user, //username called to user
+                password: pass //password called to pass
             },
-            success: function (response) {      //on a response from user we will console log "test user"
+            success: function (response) { //on a response from user we will console log "test user"
                 console.log("Success!!");
-                if (response.error) {           //if response errs we'll do an alert
+                if (response.error) { //if response errs we'll do an alert
                     alert(response.error);
-                } else {                        //else if no error we will go to the admin.html
+                } else { //else if no error we will go to the admin.html
                     window.location.assign('admin.html');
                 }
             }
@@ -211,7 +205,7 @@
                 status: status //calls database names into vars above
 
             },
-            success: function (response) { //success funtion
+            success: function (response) { //success function
                 console.log('Testing for success Gooooo me!'); //consoling for are we in function
                 if (response.error) { //if an error respond by
                     alert(response.error); //popping an alert box with message
@@ -223,7 +217,7 @@
     });
 
 
-//Get Projects
+    //Get Projects
 
     var projects = function () {
 
@@ -242,23 +236,23 @@
                         console.log(result); //lists out all projects and data fields with values (result variable)
 
                         $(".projects").append( //we are going to insert this information into the .projects class div
-                           // '<div style = "border: 1px solid black">' +
-                            '<div id = "sortable" class = "ui-state-default">' +
+                            // '<div style = "border: 1px solid black">' +
+                            '<div class = "ui-state-default">' +
                             "<input class = 'projectid' type = 'hidden' value = '" + result.id + "'  > " + "<br>" +
                             " Project Name: " + result.projectName + "<br>" +
                             " Project Description: " + result.projectDescription + "<br>" +
                             " Project Status: " + result.status + "<br>" +
                             "Project Due Date: " + result.dueDate + "<br>" +
                             "Project ID: " + result.id + "<br><br>" +
-                            '<button class = "deletebtn" >Delete</button>' +
-                            '<button class = "editbtn">Edit</button>' + '<br></div>' //this is one long concatanation of how the information will be displayed within the html including the css and field vars of information from the db
+                            '<button class = "deletebtn" title = "Delete this project?" >Delete</button>' +
+                            '<button class = "editbtn">Edit</button>' + '<br>' + '</div>' //this is one long concatanation of how the information will be displayed within the html including the css and field vars of information from the db
                         );
                         console.log("This is " + result.id); //logs out what the result.id is at moment used when trying to figuree out how to assign id to delete button so correct record is deleted.
 
                     }
                     $(".deletebtn").on('click', function () { //calls a function on the delete button to delete a record
 
-                        var PID = $(this).parent().find(".projectid").val();  //finds the value of the project id, saves the value in PID and deletes
+                        var PID = $(this).parent().find(".projectid").val(); //finds the value of the project id, saves the value in PID and deletes
                         /* $(this).remove(PID); */
                         /* var PID = $(this)("projectid").val(); //these are all expressions trying to figure out how to get right record deleted, from here..*/
                         /* $(this).PID.remove();*/
@@ -299,31 +293,79 @@
 
     projects();
 
-    //DatePicker
+//REQUIRED FOR WEEK 4
 
-
-
-    $(function() {
-        $( ".datepicker" ).datepicker();
-        $( "#anim" ).change(function() {
-            $( "#datepicker" ).datepicker( "option", "showAnim","slow", $( this ).val("clip") );
+//DatePicker
+    $(function () {
+        $(".datepicker").datepicker(); //calls the datepicker function of JQuery ui
+        $("#anim").change(function () { //animating on open and close
+            $("#datepicker").datepicker("option", "showAnim", "slow", $(this).val("clip")); //slowly the clip effect will be used
         });
 
     });
 
-    //
-
-    //sortable
-    $(function() {
-        $( ".sortable" ).sortable({
-            placeholder: "ui-sortable-placeholder"
+//sortable
+    $(function () { //creates a function to drag and drop the "sortable" divs
+        $(".sortable").sortable({
+            placeholder: "ui-sortable-placeholder" //and creates a placeholder styled in css to use as a target as mouse moves DOM element
         });
     });
 
+//EXTRA OPTIONS
 
+// Dialog Box for email request of information submission
+    $('#signUp').click(function () { //declares a function to be called when the button "signUp" is called
+        event.preventDefault();   //without, the window jumps on button click and clears out the dialog box
+        $("#dialog").dialog(); //On button click this dialog will pop up
 
+    });
 
+    //initializing the gmap.js plugin
 
+    $(function() {
+        $("#map").width("800px").height("480px").gmap3({  //initializes gmap3 plug in at the specified height and width
+            marker: {                                       //sets the marker and options
+                events: { // events trigged by markers
+                    click: function (marker, event, context) {      //bind a click event to show infowindow
+                        var map = $(this).gmap3("get"),
+                            infowindow = $(this).gmap3({get: {name: "infowindow"}});  //add content to infowindow
+                        if (infowindow) {
+                            infowindow.open(map, marker);
+                            infowindow.setContent(context.data);
+                        } else {
+                            $(this).gmap3({                 //uses the default info windows loaded in google maps
+                                infowindow: {
+                                    anchor: marker,
+                                    options: {content: context.data}
+                                }
+                            });
+                        }
+                    }
+                },
+                values: [                               //locations of our markers
+                    {
+                        address: "3300 University Boulevard., Winter Park FL 32792",
+                        data: "We are here at Full Sail University"
+                    },
+                    {
+                        address: "4000 North Goldenrod Road, Winter Park, FL 32792",
+                        data: "Here is the nearest grocery store."
+                    },
+                    {
+                        address: "3333 University Boulevard, Winter Park, FL 32792",
+                        data: "This is where you can find Costco."
+                    }
+                ]
+            },
+            map: {
+                options: {
+                    //zoom: 16   //original zoom value that centered the university removed so that we could use the
+                                //autofit option below
+                }
+            }
+        }, "autofit");              //auto sets the zoom so that all markers are visible on page load
+
+    });
 
 
 

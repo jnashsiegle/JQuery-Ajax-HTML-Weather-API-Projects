@@ -365,7 +365,7 @@ button#addButton {
 
 /*++++++++++++++++++++++++TABS STYLING / ADMIN PAGE+++++++++++++++++*/
 #admin{
-    height: 500px;
+    height: 600px;
 }
 #admin h1, #admin h2{
     margin-left: 180px;
@@ -438,9 +438,11 @@ body {
 }
 #container {
     width: 100%;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     padding: 1.250em;
     position: relative;
+    height: auto;
+
 }
 h1, h2, p {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -648,9 +650,23 @@ input{
 .ui-sortable-placeholder {
     border: 3px dashed #aaa;
     height: 158px;
-    width: 1160.5px;
+    width: 1160px;
     background: #ccc;
 }
+
+#dialog {
+display:none
+}
+
+#map{
+    margin:75px auto;
+    border: 20px groove #c87346;
+}
+
+#account h1{
+    margin: 20px auto auto 20px;
+}
+
 
 
 
