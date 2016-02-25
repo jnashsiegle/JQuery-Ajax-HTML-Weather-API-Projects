@@ -1,2 +1,1 @@
-# Nash_Jana_PWA2
-Weekly Assignments for Programming for Web Applications II
+Projects using Ajax, utilizing an external weather API, Jquery Plugins, JavaScript, HTML etc.
